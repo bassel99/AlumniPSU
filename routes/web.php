@@ -12,5 +12,11 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('home');
 });
+
+//go to sign in page
+Route::get('/login', 'SessionsController@create');
+
+//sign in logic
+Route::post('/login', 'SessionsController@store');
