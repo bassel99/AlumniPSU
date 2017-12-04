@@ -13,7 +13,7 @@
 
 Route::get('/', function () {
     return view('home');
-});
+})->name('home');
 
 //go to sign in page
 Route::get('/login', 'SessionsController@create');

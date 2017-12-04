@@ -55,23 +55,38 @@ if (isset($_POST['submit'])) {
                 <img src="/images/logo_hor.png">
             </h1>
         </div>
-        <form action="create.blade.php" method="POST">
+
+        <form method="POST" action="/login">
+
+            {{ csrf_field() }}
+
             <div class="modal-body">
                 <div class="form-group">
-                    <input type="text" class="form-control input-lg" placeholder="Username" name="username"/>
+                    <input type="email" class="form-control input-lg" placeholder="Username"
+                           id="email" name="email" required/>
                 </div>
 
                 <div class="form-group">
-                    <input type="password" class="form-control input-lg" placeholder="Password" name="password"/>
+                    <input type="password" class="form-control input-lg"
+                           placeholder="Password" id="password" name="password" required/>
                 </div>
 
+                <br>
+                <br>
+
                 <div class="form-group">
-                    <input type="submit" name="submit" class="btn btn-block btn-lg btn-col" value="Login"
-                           class="backcol"/><br>
+                    <input type="submit" name="submit" class="btn btn-block btn-lg btn-col backcol"
+                           value="Login" required/>
+
+                    <br>
+
                     <span class="pull-right"><a href="/Sign_up.blade.php">Register</a></span><span><a
                                 href="#">Forgot Password</a></span>
                 </div>
             </div>
+
+            @include('layouts.errors')
+
         </form>
     </div>
 </div>
