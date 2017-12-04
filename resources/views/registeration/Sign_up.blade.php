@@ -13,8 +13,8 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <!-- -->
-    <link rel="stylesheet" href="../../public/css/home.css">
-    <link rel="stylesheet" href="../../public/css/css_login.css">
+    <link rel="stylesheet" href="../../../public/css/home.css">
+    <link rel="stylesheet" href="../../../public/css/css_login.css">
 </head>
 
 
@@ -34,7 +34,7 @@ if (isset($_POST['submit'])) {
 
     $sql = "INSERT INTO users ( name,username,email,password) VALUES ('" . $name . "','" . $username . "','" . $email . "','" . $password . "')";
     $result = mysqli_query($conn, $sql);
-    header('Location: login.blade.php');
+    header('Location: create.blade.php');
 }
 
 ?>
