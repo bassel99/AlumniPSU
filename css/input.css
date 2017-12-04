@@ -1,0 +1,97 @@
+
+#box {
+    box-shadow: 2px 2px 30px #EEEEEE;
+    border: 4px black;
+    padding: 15px;
+    margin: 19px;
+    border-radius: 3px;
+    cursor: pointer;
+
+}
+
+#box1 {
+    box-shadow: 2px 2px 30px;
+    border: 4px black;
+    padding: 15px;
+    margin: 5px;
+    border-radius: 3px;
+
+}
+
+hovver:hover {
+    border: 4px green;
+}
+
+.imgproduct {
+    width: 120px;
+    height: 128px;
+}
+
+.imgHolder {
+    position: relative;
+    color: white;
+}
+
+.imgdescription {
+    width: 400px;
+    height: 300px;
+    margin: 50px auto;
+    display: block;
+    padding: 25px;
+    width: auto;
+    height: auto;
+    align: left;
+}
+
+.imgHolder span {
+    cursor: pointer;
+
+    padding: 2px;
+    position: absolute;
+    right: 0px;
+    bottom: 0px;
+    background-color: #1ECD97;
+}
+
+.col-mdd-1 {
+    width: 46%;
+    float: left;
+}
+
+.col-mdd-2 {
+    width: 18%;
+    float: left;
+}
+
+.login {
+    background-color: #1ECD97;
+    overflow: hidden;
+    margin: 10px;
+    padding: 12px 12px;
+    cursor: pointer;
+    text-align: center;
+    white-space: nowrap;
+    text-decoration: none;
+    color: #fff;
+
+    border: 0 none;
+    border-radius: 4px;
+    font-size: 13px;
+    font-weight: 500;
+    line-height: 1.3;
+}
+
+.carousel-control {
+    background-image: none !important;
+}
+
+#centerphoto {
+
+    margin: 75px auto;
+    display: block;
+    padding: 25px;
+}
+
+.test {
+    margin: 0;
+}
