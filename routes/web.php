@@ -15,8 +15,11 @@ Route::get('/', function () {
     return view('home');
 })->name('home');
 
-//go to sign in page
+//go to sign in page controller
 Route::get('/login', 'SessionsController@create');
 
 //sign in logic
 Route::post('/login', 'SessionsController@store');
+
+//logout logic
+Route::get('/logout', 'SessionsController@destroy');
