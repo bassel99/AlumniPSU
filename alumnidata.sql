@@ -2,10 +2,10 @@
 -- version 4.7.4
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Generation Time: Dec 04, 2017 at 02:17 PM
--- Server version: 10.1.28-MariaDB
--- PHP Version: 7.1.10
+-- Host: 127.0.0.1:3306
+-- Generation Time: Dec 04, 2017 at 05:12 PM
+-- Server version: 5.7.19
+-- PHP Version: 7.1.9
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -19,16 +19,17 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `alumni-database`
+-- Database: `alumnidb`
 --
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `database_alumni1`
+-- Table structure for table `alumnidata`
 --
 
-CREATE TABLE `database_alumni1` (
+DROP TABLE IF EXISTS `alumnidata`;
+CREATE TABLE IF NOT EXISTS `alumnidata` (
   `sequence` int(11) DEFAULT NULL,
   `Id` varchar(24) CHARACTER SET utf8 DEFAULT NULL,
   `Name` varchar(47) CHARACTER SET utf8 DEFAULT NULL,
@@ -50,10 +51,10 @@ CREATE TABLE `database_alumni1` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `database_alumni1`
+-- Dumping data for table `alumnidata`
 --
 
-INSERT INTO `database_alumni1` (`sequence`, `Id`, `Name`, `Arabicname`, `major`, `GPA`, `Nationality`, `Graduation_Year`, `Name_company_or_institution_Cooperative_Education`, `What_happened_after_the_expiration_of_the_training_period`, `of_the_company_or_institution_that_hire_him_Place_the_employer`, `Job_title`, `EMPLOYER_CONTACT_INFORMATION`, `employer`, `Name_un_The_time_taken_to_graduate_for_the_job`, `Contact_Numbers`, `E_Mail`, `flag`) VALUES
+INSERT INTO `alumnidata` (`sequence`, `Id`, `Name`, `Arabicname`, `major`, `GPA`, `Nationality`, `Graduation_Year`, `Name_company_or_institution_Cooperative_Education`, `What_happened_after_the_expiration_of_the_training_period`, `of_the_company_or_institution_that_hire_him_Place_the_employer`, `Job_title`, `EMPLOYER_CONTACT_INFORMATION`, `employer`, `Name_un_The_time_taken_to_graduate_for_the_job`, `Contact_Numbers`, `E_Mail`, `flag`) VALUES
 (1, '120000548.0', 'Mohamed Ibrahim Gard', 'محمد بن إبراهيم الجارد', 'Finance', '3.02', 'Saudia Arabia', '2003/2004م', 'National Commercial Bank', NULL, 'Abdullah Gard Company Limited', 'Deputy Director-General', NULL, 'Medium', NULL, '0505615498 - 0114541339', 'mr_aljarid@yahoo.com', 1),
 (2, '119990320.0', 'Saleh Mohammed ALRawaf', 'صالح بن محمد الرواف', 'Finance', '3.02', 'Saudia Arabia', '2003/2004م', ' Saudi Import Company Holdings ', NULL, ' Saudi Import Company Holdings ', 'Financial Manager', NULL, 'large', 'During the cooperative training', '026916390 - 0558868100', 'saleh_rawaf@hotmail.com', 1),
 (3, '119993270.0', 'Abdul Rahman Ibrahim ALmodemig', 'عبدالرحمن بن إبراهيم المديميغ', 'Finance', '3.55', 'Saudia Arabia', '2003/2004م', 'Arab National Bank', NULL, 'Saudi Industrial Development Fund', 'Vice President for Business Development', NULL, 'large', NULL, '0505239068 - 0114808818', 'modaimeegh@gmail.com', 1),
@@ -238,7 +239,7 @@ INSERT INTO `database_alumni1` (`sequence`, `Id`, `Name`, `Arabicname`, `major`,
 (182, '120000251.0', 'Hammoud Ali Hammoud Al Hamzah', NULL, 'Finance\n', '1.75', 'Saudia Arabia', '2006/2007م', 'Samba Financial Group', NULL, 'Arab National Bank', NULL, NULL, 'large', NULL, '504462647.0', 'humoud222@hotmail.com', 1),
 (183, '120011018.0', 'Hatem Nasser Hamad  Al-Sieaary', NULL, 'Finance\n', '2.14', 'Saudia Arabia', '2006/2007م', 'Arab National Bank', NULL, 'Riyad Bank', NULL, NULL, 'large', NULL, '503241664.0', 'hnsaiari@hotmail.com', 1),
 (184, '120011142.0', 'Bandar Abdullah Abdulaziz Al-Tamimi', NULL, 'Finance\n', '2.26', 'Saudia Arabia', '2006/2007م', 'Arab National Bank', NULL, 'Bank Al Bilad', NULL, NULL, 'large', NULL, '555471987.0', 'xtamimix@hotmail.com', 1);
-INSERT INTO `database_alumni1` (`sequence`, `Id`, `Name`, `Arabicname`, `major`, `GPA`, `Nationality`, `Graduation_Year`, `Name_company_or_institution_Cooperative_Education`, `What_happened_after_the_expiration_of_the_training_period`, `of_the_company_or_institution_that_hire_him_Place_the_employer`, `Job_title`, `EMPLOYER_CONTACT_INFORMATION`, `employer`, `Name_un_The_time_taken_to_graduate_for_the_job`, `Contact_Numbers`, `E_Mail`, `flag`) VALUES
+INSERT INTO `alumnidata` (`sequence`, `Id`, `Name`, `Arabicname`, `major`, `GPA`, `Nationality`, `Graduation_Year`, `Name_company_or_institution_Cooperative_Education`, `What_happened_after_the_expiration_of_the_training_period`, `of_the_company_or_institution_that_hire_him_Place_the_employer`, `Job_title`, `EMPLOYER_CONTACT_INFORMATION`, `employer`, `Name_un_The_time_taken_to_graduate_for_the_job`, `Contact_Numbers`, `E_Mail`, `flag`) VALUES
 (185, '120000519.0', 'Walid  Khaled Al Assaf', NULL, 'Finance\n', '3.07', 'Saudia Arabia', '2006/2007م', 'Samba Financial Group', NULL, 'Financial Group EFG ', NULL, NULL, 'large', NULL, '504120323.0', 'wkwssaf@std.psc.edu.sa', 1),
 (186, '120011125.0', 'Abdul Aziz Bin Mishal Al Sugair', NULL, 'Finance\n', '2.26', 'Saudia Arabia', '2006/2007م', 'Samba Financial Group', NULL, 'National Commercial Bank', NULL, NULL, 'large', NULL, '0503664655 - 0503898842', 'lombardo_83@hotmail.com', 1),
 (187, '120011003.0', 'AbduleIlah Bin Abdul Aziz Al-Ghanim', NULL, 'Finance', '2.15', 'Saudia Arabia', '2006/2007م', 'Samba Financial Group', NULL, 'Saudi Metal Mining Company', NULL, NULL, 'large', NULL, '0554400371 - 0114210154', 'gha_83@hotmail.com', 1),
@@ -426,7 +427,7 @@ INSERT INTO `database_alumni1` (`sequence`, `Id`, `Name`, `Arabicname`, `major`,
 (369, '120020081.0', ' Mohammed bin Sami Rashid', NULL, 'Information Systems', '2.25', 'Saudia Arabia', '2008-2009م', 'CHIP Computer Services', NULL, 'Gulf Investment Company', NULL, NULL, 'small', NULL, '0507433925 - 0551249475 - 0503293744', 'msr_4_ever@hotmail.com', 1),
 (370, '220011556.0', 'Khaled Mahmoud Khaled Al-Turk', NULL, 'Information Systems', '2.12', 'Syrian ', '2008-2009م', 'edusoft Company', NULL, 'Business man', NULL, NULL, 'small', NULL, '0500400320 - 0500400240', 'khalid.al-turk@hotmail.com', 1),
 (371, '120020065.0', 'Iyad Mohammed Ali Al Nono', NULL, 'Information Systems', '2.00', 'Syrian ', '2008-2009م', 'Saudi Oger Limited ', NULL, 'Saudi Oger Limited ', NULL, NULL, 'large', 'During the cooperative training', '0558018050 - 0505240268 - 0114721452', 'iyadnn@hotmail.com', 1);
-INSERT INTO `database_alumni1` (`sequence`, `Id`, `Name`, `Arabicname`, `major`, `GPA`, `Nationality`, `Graduation_Year`, `Name_company_or_institution_Cooperative_Education`, `What_happened_after_the_expiration_of_the_training_period`, `of_the_company_or_institution_that_hire_him_Place_the_employer`, `Job_title`, `EMPLOYER_CONTACT_INFORMATION`, `employer`, `Name_un_The_time_taken_to_graduate_for_the_job`, `Contact_Numbers`, `E_Mail`, `flag`) VALUES
+INSERT INTO `alumnidata` (`sequence`, `Id`, `Name`, `Arabicname`, `major`, `GPA`, `Nationality`, `Graduation_Year`, `Name_company_or_institution_Cooperative_Education`, `What_happened_after_the_expiration_of_the_training_period`, `of_the_company_or_institution_that_hire_him_Place_the_employer`, `Job_title`, `EMPLOYER_CONTACT_INFORMATION`, `employer`, `Name_un_The_time_taken_to_graduate_for_the_job`, `Contact_Numbers`, `E_Mail`, `flag`) VALUES
 (372, '120000491.0', 'Raed Abdullah Bin Dakhil Al-Wazzan…', NULL, 'Information Systems', '1.69', 'Saudia Arabia', '2008-2009م', 'STC Company', NULL, 'Reef Company', NULL, NULL, 'small', NULL, '0114509489 - 0545101000', 'readw@windowslive.com', 1),
 (373, '220000716.0', 'Ahmed Bin Ali Ahmed\'Aqeeli', NULL, 'Information Systems', '1.50', 'Saudia Arabia', '2008-2009م', 'Advanced Electronics Company', NULL, 'Faisaliah Group', NULL, NULL, 'large', NULL, '0545000049 - 0112782023', 'aahmad_sa@hotmail.com', 1),
 (374, '119993233.0', 'Naif Ibrahim Abdullah Al Jalalah', NULL, 'Information Systems', '2.01', 'Saudia Arabia', '2008-2009م', 'Ejada Systems Co., Ltd.', NULL, 'Business man', NULL, NULL, 'small', NULL, '038115033 - 0566399197 - 0544897032', 'naif.jalalah@hotmail.com', 1),
@@ -607,7 +608,7 @@ INSERT INTO `database_alumni1` (`sequence`, `Id`, `Name`, `Arabicname`, `major`,
 (549, '120050224.0', 'Abdullah bin Adnan Al Tersha', NULL, 'Information Systems', '2.03', 'Lebanese', '2010/2011م ', 'Company m, health', NULL, 'Company m, health', NULL, NULL, 'large', 'During the cooperative training', '0560398390 - 0568022584 - 0114609383', 'sensei.a.tarsha@gmail.com', 1),
 (550, '220040326.0', 'Mohammed bin Abdullah Al nujiedy', NULL, 'Information Systems', '2.04', 'Saudia Arabia', '2010/2011م ', 'Arab National Bank', NULL, 'STC Company', NULL, NULL, 'large', NULL, '0505427973 - 0505460895 - 0114567401', 'moh511@hotmail.com', 1),
 (551, '120070126.0', 'Ahmed Mohammed Khader Zread', NULL, 'Accounting', '2.77', 'Palestinian', '2011/2012م ', 'Al Faisaliah Group', NULL, 'RIZ-Transmitters Co.', NULL, NULL, 'large', NULL, '0566003036 - 0505224502 - 0114634300', 'ahmad-kh@hotmail.com', 1);
-INSERT INTO `database_alumni1` (`sequence`, `Id`, `Name`, `Arabicname`, `major`, `GPA`, `Nationality`, `Graduation_Year`, `Name_company_or_institution_Cooperative_Education`, `What_happened_after_the_expiration_of_the_training_period`, `of_the_company_or_institution_that_hire_him_Place_the_employer`, `Job_title`, `EMPLOYER_CONTACT_INFORMATION`, `employer`, `Name_un_The_time_taken_to_graduate_for_the_job`, `Contact_Numbers`, `E_Mail`, `flag`) VALUES
+INSERT INTO `alumnidata` (`sequence`, `Id`, `Name`, `Arabicname`, `major`, `GPA`, `Nationality`, `Graduation_Year`, `Name_company_or_institution_Cooperative_Education`, `What_happened_after_the_expiration_of_the_training_period`, `of_the_company_or_institution_that_hire_him_Place_the_employer`, `Job_title`, `EMPLOYER_CONTACT_INFORMATION`, `employer`, `Name_un_The_time_taken_to_graduate_for_the_job`, `Contact_Numbers`, `E_Mail`, `flag`) VALUES
 (552, '120060049.0', 'Abdulrahman Waleed Al-Swayeh', NULL, 'Accounting', '2.23', 'Saudia Arabia', '2011/2012م ', 'Price water house Coopers', NULL, NULL, NULL, NULL, NULL, NULL, '0506785678 - 0565560097 - 0506909909', 'a.alswayeh@gmail.com', 1),
 (553, '120070081.0', 'Omar Ali Al Bardawil', NULL, 'Accounting', '3.64', 'Palestinian', '2011/2012م ', 'Ernst & Young', NULL, 'Ernst & Young', NULL, NULL, 'large', 'During the cooperative training', '0552727550 - 0536351867 - 0505472562 - 0112910509', 'o.bardaweel@gmail.com', 1),
 (554, '208110160.0', 'Mohammad Abdul Malik', NULL, 'Accounting', '3.94', 'Canadian', '2011/2012م ', 'Ernst & Young', NULL, 'ABB Company', NULL, NULL, 'large', NULL, '0568507427 - 0504411307 - 0114709141', 'amalik.kamran12@gmail.com', 1),
@@ -804,7 +805,7 @@ INSERT INTO `database_alumni1` (`sequence`, `Id`, `Name`, `Arabicname`, `major`,
 (745, '220060358.0', 'thamer mishal al tahan', NULL, 'Finance', '1.83', 'Saudi', '2012/2013م ', 'Arab National Bank', NULL, 'Lebara Telecom', NULL, NULL, 'large', NULL, '0556448429 - 0501202698', 'tmt.thamer@yahoo.com', 1),
 (746, '208110274.0', 'Faisal Mohammed Saad Al Saud', NULL, 'Finance', '2.18', 'saudi', '2012/2013م ', 'Samba Financial Group / The Saudi Investment Bank', NULL, 'The Saudi Investment Bank', NULL, NULL, 'large', 'During the cooperative training', '0553224448 - 0114865020', 'faisal.m.s@live.com', 1),
 (747, '120070244.0', 'Ahmed Ghassan Najeeb', NULL, 'Marketing', '2.40', 'Saudi', '2012/2013م ', 'General Electric Company', NULL, 'STC Company', NULL, NULL, 'large', NULL, '0500044756 - 0505210936', 'ahmednajeeb@windowslive.com', 1);
-INSERT INTO `database_alumni1` (`sequence`, `Id`, `Name`, `Arabicname`, `major`, `GPA`, `Nationality`, `Graduation_Year`, `Name_company_or_institution_Cooperative_Education`, `What_happened_after_the_expiration_of_the_training_period`, `of_the_company_or_institution_that_hire_him_Place_the_employer`, `Job_title`, `EMPLOYER_CONTACT_INFORMATION`, `employer`, `Name_un_The_time_taken_to_graduate_for_the_job`, `Contact_Numbers`, `E_Mail`, `flag`) VALUES
+INSERT INTO `alumnidata` (`sequence`, `Id`, `Name`, `Arabicname`, `major`, `GPA`, `Nationality`, `Graduation_Year`, `Name_company_or_institution_Cooperative_Education`, `What_happened_after_the_expiration_of_the_training_period`, `of_the_company_or_institution_that_hire_him_Place_the_employer`, `Job_title`, `EMPLOYER_CONTACT_INFORMATION`, `employer`, `Name_un_The_time_taken_to_graduate_for_the_job`, `Contact_Numbers`, `E_Mail`, `flag`) VALUES
 (748, '120070102.0', 'Turki Abdullah Al Debaikhi', NULL, 'Marketing', '2.22', 'Saudi', '2012/2013م ', '( Three points ) Company & Stc', NULL, 'Mobily Company', NULL, NULL, 'large', NULL, '0562000750 - 0501222282', 'turki.d@hotmail.com', 1),
 (749, '208110279.0', 'Jehad Tayseer Al shanty', NULL, 'Marketing', '2.87', 'Jordanian', '2012/2013م ', 'Nelson Company', NULL, 'Nelson Company', NULL, NULL, 'large', 'During the cooperative training', '0568388337 - 0114649601 - 0504414692', 'jihad_elshanti@hotmail.com', 1),
 (750, '120070118.0', 'ahmad mohammadali jan', NULL, 'Marketing', '2.37', 'Saudi', '2012/2013م ', 'Al-Elm for Information Security', NULL, 'elixir business consultancy', NULL, NULL, 'Medium', NULL, '0505780208 - 0504161354', 'ahmad_jan88@hotmail.com', 1),
@@ -1004,7 +1005,7 @@ INSERT INTO `database_alumni1` (`sequence`, `Id`, `Name`, `Arabicname`, `major`,
 (944, '211120858.0', 'ABDULAZIZ ABDULLAH ALDHARRAB', NULL, 'MBA Finance', '3.52', 'Saudi', '2013/2014م', 'Arasco Company', NULL, 'Arasco', NULL, NULL, 'large', NULL, '555207720.0', 'aziz@aldharrab.com', 1),
 (945, '211120830.0', 'Walid Al-Angari', NULL, 'MBA Finance', '3.35', 'Saudi', '2013/2014م', ' مدنية الملك عبدالعزيز للعلوم والتقنية / King Abdulaziz City for Science and Technology KACST', NULL, 'KACST', NULL, NULL, 'large', NULL, '503222965.0', 'walid.alangari@gmail.com', 1),
 (946, '211120891.0', 'Ahmed Al-Badrani', NULL, 'MBA Finance', '3.38', 'Saudi', '2013/2014م', 'شركة تاج الرياض للأعمال التجارية / Taj Al Riyadh for business', NULL, 'شركة تاج الرياض للأعمال التجارية', NULL, NULL, 'small', NULL, '548000038.0', 'AlBadrani@yahoo.com', 1);
-INSERT INTO `database_alumni1` (`sequence`, `Id`, `Name`, `Arabicname`, `major`, `GPA`, `Nationality`, `Graduation_Year`, `Name_company_or_institution_Cooperative_Education`, `What_happened_after_the_expiration_of_the_training_period`, `of_the_company_or_institution_that_hire_him_Place_the_employer`, `Job_title`, `EMPLOYER_CONTACT_INFORMATION`, `employer`, `Name_un_The_time_taken_to_graduate_for_the_job`, `Contact_Numbers`, `E_Mail`, `flag`) VALUES
+INSERT INTO `alumnidata` (`sequence`, `Id`, `Name`, `Arabicname`, `major`, `GPA`, `Nationality`, `Graduation_Year`, `Name_company_or_institution_Cooperative_Education`, `What_happened_after_the_expiration_of_the_training_period`, `of_the_company_or_institution_that_hire_him_Place_the_employer`, `Job_title`, `EMPLOYER_CONTACT_INFORMATION`, `employer`, `Name_un_The_time_taken_to_graduate_for_the_job`, `Contact_Numbers`, `E_Mail`, `flag`) VALUES
 (947, '211120508.0', 'Abdulaziz Al-Qahtani', NULL, 'MBA Finance', '3.25', 'Saudi', '2013/2014م', 'Saudi Electricty Company', NULL, 'Saudi Electricty Company', NULL, NULL, 'large', NULL, '566293138.0', 'a.aziz.hamad@gmail.com', 1),
 (948, '211120520.0', 'Abdulaziz Abdullah Al-Faiz', NULL, 'MBA Finance', '3.83', 'Saudi', '2013/2014م', 'هيئة الاتصالات وتقنية المعلومات / citc.gov.sa', NULL, 'هيئة الاتصالات وتقنية المعلومات ', NULL, NULL, 'large', NULL, '503277177.0', 'ab.alfaiz@gmail.com', 1),
 (949, '210120694.0', 'Anas Saleh Alreemi', NULL, 'MBA Finance', '3.81', 'Saudi', '2013/2014م', 'Ministry of Higher Education', NULL, 'Ministry of Higher Education', NULL, NULL, 'large', NULL, '555553730.0', 'anasreemi@hotmail.com', 1),
@@ -1159,7 +1160,7 @@ INSERT INTO `database_alumni1` (`sequence`, `Id`, `Name`, `Arabicname`, `major`,
 (1098, '212121120.0', 'Syed Ejaz Ali Shah', ' سيد اعجاز علي شاه', 'MSE', '3.08', 'Pakistani', '2014/2015م', 'Work place: Saudi Electricity Company\nOccupation: Server Monitoring ', NULL, 'Work place: Saudi Electricity Company\nOccupation: Server Monitoring ', NULL, NULL, 'large', NULL, '0556352993 - 0504518102', 'syedejaz2005@hotmail.com', 1),
 (1099, '210210023.0', 'Faisal Ameen Alali', ' فيصل أمين محمود العلي', 'Accountaing ', '2.09', ' سعودي', '2016/2015م', 'شركة ايس وساطة التأمين / ACE INSURANCE & REINSURANCE BROKERS', NULL, 'سيرد بالإيميل', NULL, NULL, NULL, NULL, '0554450222 - 0543450222', 'fasoooli@msn.com', 1),
 (1100, '210110605.0', 'Oubay Riad Shalhoub', 'أُبي رياض سركيس شلهوب', 'Accountaing', '1.56', 'سوري', '2015/2016م', 'مكتب محمد صوان للمحاسبة / Mohammed Sawan Accounting Office', NULL, 'مؤسسة مصنع توباز للذهب والمجوهرات / Institution Topaz factory Gold and Jewellery', 'المدير المالي / Chief Financial Officer', 'Tel: 011 2057877', 'small', NULL, '0545533322 - 0544649829', 'oubay_shalhoub@hotmail.com', 1);
-INSERT INTO `database_alumni1` (`sequence`, `Id`, `Name`, `Arabicname`, `major`, `GPA`, `Nationality`, `Graduation_Year`, `Name_company_or_institution_Cooperative_Education`, `What_happened_after_the_expiration_of_the_training_period`, `of_the_company_or_institution_that_hire_him_Place_the_employer`, `Job_title`, `EMPLOYER_CONTACT_INFORMATION`, `employer`, `Name_un_The_time_taken_to_graduate_for_the_job`, `Contact_Numbers`, `E_Mail`, `flag`) VALUES
+INSERT INTO `alumnidata` (`sequence`, `Id`, `Name`, `Arabicname`, `major`, `GPA`, `Nationality`, `Graduation_Year`, `Name_company_or_institution_Cooperative_Education`, `What_happened_after_the_expiration_of_the_training_period`, `of_the_company_or_institution_that_hire_him_Place_the_employer`, `Job_title`, `EMPLOYER_CONTACT_INFORMATION`, `employer`, `Name_un_The_time_taken_to_graduate_for_the_job`, `Contact_Numbers`, `E_Mail`, `flag`) VALUES
 (1101, '211110323.0', 'Ibrahim Khalil Alwhaibi', 'إبراهيم خليل عواد الوهيبي', 'Accountaing', '2.99', 'أردني', '2015/2016م', 'شركة إرست أند ينغ - السعودية / Ernst & Young in Saudi', NULL, 'It is still in the training period', NULL, NULL, NULL, NULL, '0566038755 - 0560604849', 'ibrahim_alwhaibi@hotmail.com', 1),
 (1102, '211110509.0', 'Abdulrahman Ali Alqarni', 'عبدالرحمن علي سعد القرني', 'Accountaing', '2.90', ' سعودي', '2015/2016م', 'شركة إرست أند ينغ - السعودية / Ernst & Young in Saudi', NULL, 'He did not answer Mobile', 'He did not answer Mobile', 'He did not answer Mobile', NULL, NULL, '0555205540 - 0544588068', 'aasq93@hotmail.com', 1),
 (1103, '211210076.0', 'Ahmad Saleh Al Husseini', 'أحمد صالح عيد الحصيني', 'Accountaing', '2.68', ' سعودي', '2015/2016م', 'شركة إرست أند ينغ - السعودية / Ernst & Young in Saudi', NULL, 'شركة إرست أند ينغ - السعودية / Ernst & Young in Saudi', NULL, NULL, 'large', 'During the cooperative training', '0505469575 - 0509130130', 'Alhusseini.ahmad1@gmail.com', 1),
@@ -1318,7 +1319,7 @@ INSERT INTO `database_alumni1` (`sequence`, `Id`, `Name`, `Arabicname`, `major`,
 (1256, '212120900.0', 'IBRAHIM Abdulaziz ALHUDHAIF', ' ابراهيم عبدالعزيز سليمان الحضيف', 'MBA General', '3.36', 'Saudi', '2016/2015م', 'مجموعة الراجحي القابضة', NULL, NULL, NULL, NULL, 'large', NULL, '555598399.0', 'ihudhaif@gmail.com', 1),
 (1257, '213121103.0', 'Abdulaziz Ibrahim Binhalail', ' عبدالعزيز ابراهيم زيد بن هليل', 'MBA Finance', '3.48', 'Saudi', '2016/2015م', 'شركة سابك - كبير المحللين الماليين', NULL, NULL, NULL, NULL, 'large', NULL, '0594949435 - 0505777480', 'abdulaziz.hulaiyel@gmail.com', 1),
 (1258, '212220224.0', 'Talal Ahmed ALNajar', ' طلال بن أحمد بن صالح النجار', 'MBA Finance', '3.21', 'Yemen', '2016/2015م', 'شركة زهران القابضة - مدير الإستثمار العقاري', NULL, NULL, NULL, NULL, 'small', NULL, '535552255.0', 'talal007vip@hotmail.com', 1);
-INSERT INTO `database_alumni1` (`sequence`, `Id`, `Name`, `Arabicname`, `major`, `GPA`, `Nationality`, `Graduation_Year`, `Name_company_or_institution_Cooperative_Education`, `What_happened_after_the_expiration_of_the_training_period`, `of_the_company_or_institution_that_hire_him_Place_the_employer`, `Job_title`, `EMPLOYER_CONTACT_INFORMATION`, `employer`, `Name_un_The_time_taken_to_graduate_for_the_job`, `Contact_Numbers`, `E_Mail`, `flag`) VALUES
+INSERT INTO `alumnidata` (`sequence`, `Id`, `Name`, `Arabicname`, `major`, `GPA`, `Nationality`, `Graduation_Year`, `Name_company_or_institution_Cooperative_Education`, `What_happened_after_the_expiration_of_the_training_period`, `of_the_company_or_institution_that_hire_him_Place_the_employer`, `Job_title`, `EMPLOYER_CONTACT_INFORMATION`, `employer`, `Name_un_The_time_taken_to_graduate_for_the_job`, `Contact_Numbers`, `E_Mail`, `flag`) VALUES
 (1259, '213220112.0', 'Mishary Abdullah ALhumedan', ' مشاري عبدالله ابراهيم الحميدان', 'MBA Finance', '3.19', 'Saudi', '2016/2015م', 'شركة المياه الوطنية - أخصائي خزينة', NULL, NULL, NULL, NULL, 'large', NULL, '555228035.0', 'malhumedan@gmail.com', 1),
 (1260, '213120201.0', 'Rakan Khalid ALaqeel', ' راكان خالد ابراهيم العقيل', 'MBA Finance', '3.13', 'Saudi', '2016/2015م', 'البنك الأهلي التجاري - مصرفي شركات', NULL, NULL, NULL, NULL, 'large', NULL, '506000016.0', 'rakan.k.alaqeel@gmail.com', 1),
 (1261, '213220107.0', 'wajdi Abdullah Badawi', ' وجدي عبدالله حمزة بدوي', 'MBA Finance', '3.89', 'Saudi', '2016/2015م', 'شركة الصافي دانون - مدير تسويق', NULL, NULL, NULL, NULL, 'large', NULL, '504364182.0', 'wajhdi@yahoo.com‏', 1),
