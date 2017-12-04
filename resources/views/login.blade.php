@@ -13,8 +13,8 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <!-- -->
-    <link rel="stylesheet" href="public/css/index.css">
-    <link rel="stylesheet" href="public/css/css_login.css">
+    <link rel="stylesheet" href="../../public/css/index.css">
+    <link rel="stylesheet" href="../../public/css/css_login.css">
 </head>
 
 
@@ -37,7 +37,7 @@ if (isset($_POST['submit'])) {
     while ($row = mysqli_fetch_assoc($result)) {
 
         if (($row['username'] == $username) && ($row['password'] == $password)) {
-            header('Location: index.php');
+            header('Location: home.blade.php');
         } else {
             $message = "Incorrect username or password";
             echo "<script type='text/javascript'>alert('$message');</script>";
@@ -58,7 +58,7 @@ if (isset($_POST['submit'])) {
                 <img src="images/logo_hor.png">
             </h1>
         </div>
-        <form action="login.php" method="post">
+        <form action="login.blade.php" method="post">
             <div class="modal-body">
                 <div class="form-group">
                     <input type="text" class="form-control input-lg" placeholder="Username" name="username"/>
@@ -71,7 +71,7 @@ if (isset($_POST['submit'])) {
                 <div class="form-group">
                     <input type="submit" name="submit" class="btn btn-block btn-lg btn-col" value="Login"
                            class="backcol"/><br>
-                    <span class="pull-right"><a href="Sign_up.php">Register</a></span><span><a
+                    <span class="pull-right"><a href="Sign_up.blade.php">Register</a></span><span><a
                                 href="#">Forgot Password</a></span>
                 </div>
             </div>

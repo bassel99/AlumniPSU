@@ -13,8 +13,8 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <!-- -->
-    <link rel="stylesheet" href="public/css/index.css">
-    <link rel="stylesheet" href="public/css/css_login.css">
+    <link rel="stylesheet" href="../../public/css/index.css">
+    <link rel="stylesheet" href="../../public/css/css_login.css">
 </head>
 
 
@@ -34,7 +34,7 @@ if (isset($_POST['submit'])) {
 
     $sql = "INSERT INTO users ( name,username,email,password) VALUES ('" . $name . "','" . $username . "','" . $email . "','" . $password . "')";
     $result = mysqli_query($conn, $sql);
-    header('Location: login.php');
+    header('Location: login.blade.php');
 }
 
 ?>
@@ -47,7 +47,7 @@ if (isset($_POST['submit'])) {
                 <img src="images/logo_hor.png">
             </h1>
         </div>
-        <form action="Sign_up.php" method="POST">
+        <form action="Sign_up.blade.php" method="POST">
 
             <div class="modal-body">
                 <center><h1>Register New User</h1></center>

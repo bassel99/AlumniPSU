@@ -13,12 +13,12 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" href="public/css/index.css">
+    <link rel="stylesheet" href="../../public/css/index.css">
     <!-- -->
 
 
-    <link rel="stylesheet" href="public/css/css_login.css">
-    <link rel="stylesheet" href="public/css/navfixed.css">
+    <link rel="stylesheet" href="../../public/css/css_login.css">
+    <link rel="stylesheet" href="../../public/css/navfixed.css">
 
 
 </head>
@@ -74,7 +74,7 @@
                     </li>
 
                     <li>
-                        <a href="Sign_up.php">
+                        <a href="Sign_up.blade.php">
                             <i class="fa fa-user-plus fa-lg"></i> Sign Up
                         </a>
                     </li>
