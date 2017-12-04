@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Alumnidata;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -14,7 +15,9 @@ class HomeController extends Controller
 
     public function index()
     {
-        return view('home');
+        $users = Alumnidata::latest()->get();
+
+        return view('home', compact('users'));
     }
 
 }

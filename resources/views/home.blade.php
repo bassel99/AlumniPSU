@@ -41,7 +41,7 @@
 
                 <ul id="menu-content" class="menu-content collapse out">
                     <li class="collapsed active">
-                        <a href="home.php">
+                        <a href="/">
                             <i class="fa fa-home fa-lg"></i> Home
                         </a>
                     </li>
@@ -117,23 +117,23 @@
                     </thead>
                     <tbody>
 
+                    @foreach($users as $user)
 
-                    <?php
-                    /*
-                                        include 'include/include.php';
-                                        $sql = 'SELECT * FROM database_alumni1 where GPA=3.65';
-                                        $result = mysqli_query($conn, $sql);
+                        <tr>
 
-                                        while ($row = mysqli_fetch_assoc($result)) {
+                            <td>{{ $user->id }}</td>
+                            <td>{{ $user->englishName }}</td>
+                            <td>{{ $user->major }}</td>
+                            <td>{{ $user->GPA }}</td>
+                            <td>{{ $user->nationality }}</td>
+                            <td>{{ $user->graduation_year }}</td>
+                            <td>{{ $user->contactNumber }}</td>
+                            <td>{{ $user->email }}</td>
 
-                                            echo "<tr><td>" . $row['Id'] . "</td><td>" . $row['Name'] . "</td><td>" . $row['major'] . "</td><td>"
-                                                . $row['GPA'] . "</td><td>" . $row['Nationality'] . "</td><td>" . $row['Graduation_Year'] . "</td><td>"
-                                                . $row['Contact_Numbers'] . "</td><td>" . $row['E_Mail'] . "</td></tr>";
+                        </tr>
 
-                                        }
 
-                    */
-                    ?>
+                    @endforeach
 
 
                     </tbody>
