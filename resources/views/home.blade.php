@@ -64,17 +64,8 @@
                         </li>
 
                     </ul>
-                    <li>
-                        <a href="Login.php">
-                            <i class="fa fa-sign-in fa-lg"></i> Sign In
-                        </a>
-                    </li>
 
-                    <li>
-                        <a href="registeration/Sign_up.blade.php">
-                            <i class="fa fa-user-plus fa-lg"></i> Sign Up
-                        </a>
-                    </li>
+
                 </ul>
             </div>
         </div>
