@@ -3,7 +3,7 @@
 
 <head>
     <title>Login</title>
-    <link rel="icon" href="/public/images/logo_only.png">
+    <link rel="icon" href="/images/logo_only.PNG">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -52,7 +52,7 @@ if (isset($_POST['submit'])) {
     <div class="modal-content">
         <div class="modal-header" style="background-color:#12416D">
             <h1 class="text-center">
-                <img src="/images/logo_hor.png">
+                <img src="/images/logo_hor.PNG">
             </h1>
         </div>
 
