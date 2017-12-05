@@ -47,7 +47,7 @@ if (isset($_POST['submit'])) {
                 <img src="images/logo_hor.png">
             </h1>
         </div>
-        <form action="Sign_up.blade.php" method="POST">
+        <form action="create.blade.php" method="POST">
 
             <div class="modal-body">
                 <center><h1>Register New User</h1></center>
