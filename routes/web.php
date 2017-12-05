@@ -27,3 +27,5 @@ Route::post('/login', 'SessionsController@store');
 
 //logout logic
 Route::get('/logout', 'SessionsController@destroy');
+
+Route::get('/addAlumni', 'EntriesController@create');

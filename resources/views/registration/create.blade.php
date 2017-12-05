@@ -58,6 +58,14 @@ if (isset($_POST['submit'])) {
                     <input type="email" class="form-control input-lg" placeholder="Email" name="email"/>
                 </div>
 
+                <div class="form-group">Major
+                    <input type="text" class="form-control input-lg" placeholder="Major" name="major"/>
+                </div>
+
+                <div class="form-group">Year of graduation
+                    <input type="text" class="form-control input-lg" placeholder="Graduation Year" name="grad_year"/>
+                </div>
+
                 <div class="form-group">Username
                     <input type="text" class="form-control input-lg" placeholder="Username" name="username"/>
                 </div>

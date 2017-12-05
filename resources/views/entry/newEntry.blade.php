@@ -34,9 +34,11 @@
                 <div class="form-group">Full Name
                     <input type="text" class="form-control input-lg" placeholder="Full Name" name="name"/>
                 </div>
+
                 <div class="form-group">Major
                     <input type="text" class="form-control input-lg" placeholder="Major" name="major"/>
                 </div>
+
                 <div class="form-group">Year of graduation
                     <input type="text" class="form-control input-lg" placeholder="Graduation Year" name="grad_year"/>
                 </div>
