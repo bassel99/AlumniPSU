@@ -29,7 +29,7 @@
         <div class="nav-side-menu">
             <div class="brand" style="color: #1091B9">
                 <div style="text-align: center;">
-                    <img src="/public/images/logo_only.png">
+                    <img src="/images/logo_only.PNG">
                     <br>
                     <h3 style="color:white">Prince Sultan University</h3>
                     <p style="color:white">Alumni Database</p>
