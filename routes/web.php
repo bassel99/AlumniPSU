@@ -35,4 +35,8 @@ Route::get('/addAlumni', 'EntriesController@create');
 //create new alumni by the user
 Route::post('/addAlumni', 'EntriesController@store');
 
+Route::get('/waitForApproval', function (){
+   return view('wait_approval.wait_approval');
+});
+
 //todo: create admin table

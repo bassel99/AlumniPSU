@@ -32,7 +32,7 @@ class EntriesController extends Controller
             'grad_year' => request('grad_year')
         ]);
 
-        //todo: return to wait to home page and display a message 'wait for approval
+        //todo: return to home page and display a message 'wait for approval
         return redirect('/');
     }
 

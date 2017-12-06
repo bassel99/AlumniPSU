@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Alumnidata;
+use App\Pendingalumnu;
 use App\User;
 use Illuminate\Http\Request;
 
@@ -35,15 +36,13 @@ class RegistrationController extends Controller
             'contactNumbers' => 'required',
         ]);
 
-
-        // create and save the user
-
+        // create and store the user
         // These two will be required two time in this method,
         //in creating new alumni entry, and in creating the corresponding user
         $arabName = request('ArabicName');
         $email = request('email');
 
-        Alumnidata::create([
+        Pendingalumnu::create([
             'id' => request('uniID'),
             'englishName' => request('englishName'),
             'arabName' => $arabName,
@@ -54,21 +53,46 @@ class RegistrationController extends Controller
             'email' => $email,
             'companyCoop' => request('institCoop'),
             'afterGraduation' => request('afterGraduation'),
-            'timeForJob' =>\request('timeForJob'),
+            'timeForJob' => request('timeForJob'),
             'employer' => request('currentEmployer'),
-            'employerContactInfo'=> \request('employerContactInfo'),
+            'employerContactInfo' => request('employerContactInfo'),
             'jobTitle' => request('jobTitle'),
-            'contactNumber' => request('contactNumbers')
-        ]);
-
-        User::create([
-            'name' => $arabName,
-            'email' => $email,
+            'contactNumber' => request('contactNumbers'),
             'password' => bcrypt(request('password'))
         ]);
 
+        //todo: if the data is added to alumni table, but for some reason it
+        //is not added to the User table, then discard the data
+
+        //todo: copy this later to the approval method
+        /*User::create([
+            'name' => $arabName,
+            'email' => $email,
+            'password' => bcrypt(request('password'))
+        ]);*/
+
         //todo: redirect to wait for approval of the university page
-        return redirect('/login');
+        return redirect('/waitForApproval');
+    }
+
+
+
+
+
+    //I overrode this method in order to disable
+    //auto login after registration
+    /**
+     * Handle a registration request for the application.
+     *
+     * @param  \Illuminate\Http\Request $request
+     * @return \Illuminate\Http\Response
+     */
+    public function register(Request $request)
+    {
+        $this->validator($request->all())->validate();
+        event(new Registered($user = $this->create($request->all())));
+        return $this->registered($request, $user)
+            ?: redirect($this->redirectPath());
     }
 
 }
