@@ -64,12 +64,7 @@ class RegistrationController extends Controller
         //todo: if the data is added to alumni table, but for some reason it
         //is not added to the User table, then discard the data
 
-        //todo: copy this later to the approval method
-        /*User::create([
-            'name' => $arabName,
-            'email' => $email,
-            'password' => bcrypt(request('password'))
-        ]);*/
+
 
         //todo: redirect to wait for approval of the university page
         return redirect('/waitForApproval');
