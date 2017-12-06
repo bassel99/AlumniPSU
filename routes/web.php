@@ -29,3 +29,4 @@ Route::post('/login', 'SessionsController@store');
 Route::get('/logout', 'SessionsController@destroy');
 
 Route::get('/addAlumni', 'EntriesController@create');
+

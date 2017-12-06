@@ -62,7 +62,7 @@ if (isset($_POST['submit'])) {
 
             <div class="modal-body">
                 <div class="form-group">
-                    <input type="email" class="form-control input-lg" placeholder="Username"
+                    <input type="email" class="form-control input-lg" placeholder="Your Email"
                            id="email" name="email" required/>
                 </div>
 
@@ -80,7 +80,7 @@ if (isset($_POST['submit'])) {
 
                     <br>
 
-                    <span class="pull-right"><a href="/Sign_up.blade.php">Register</a></span><span><a
+                    <span class="pull-right"><a href="/register">Register</a></span><span><a
                                 href="#">Forgot Password</a></span>
                 </div>
             </div>
