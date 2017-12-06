@@ -36,15 +36,15 @@
                 </div>
 
                 <div class="form-group">Full Name
-                    <input type="text" class="form-control input-lg" placeholder="Full Name" name="englishName"/>
+                    <input type="text" class="form-control input-lg" placeholder="Full Name" name="name" required/>
                 </div>
 
                 <div class="form-group">Major
-                    <input type="text" class="form-control input-lg" placeholder="Major" name="major"/>
+                    <input type="text" class="form-control input-lg" placeholder="Major" name="major" required/>
                 </div>
 
                 <div class="form-group">Year of graduation
-                    <input type="text" class="form-control input-lg" placeholder="Graduation Year" name="grad_year"/>
+                    <input type="text" class="form-control input-lg" placeholder="Graduation Year" name="grad_year" required/>
                 </div>
 
                 <div class="form-group">

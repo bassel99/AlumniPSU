@@ -17,5 +17,14 @@ class EntriesController extends Controller
         return view('entry.create_entry');
     }
 
+    public function store()
+    {
+        $this->validate(request(), [
+            'name' => 'required',
+            'major' => 'required',
+            'grad_year' => 'required'
+        ]);
+    }
+
 
 }
