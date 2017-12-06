@@ -16,8 +16,9 @@ class CreatePendingAlumnusTable extends Migration
         Schema::create('PendingAlumnus', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name');
-            $table->string('graduation_year');
-            $table->timestamps('major');
+            $table->string('major');
+            $table->string('grad_year');
+            $table->timestamps();
         });
     }
 

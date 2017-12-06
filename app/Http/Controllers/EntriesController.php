@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Pendingalumnu;
 use Illuminate\Http\Request;
 
 class EntriesController extends Controller
@@ -24,6 +25,15 @@ class EntriesController extends Controller
             'major' => 'required',
             'grad_year' => 'required'
         ]);
+
+        Pendingalumnu::create([
+            'name' => request('name'),
+            'major' => request('major'),
+            'grad_year' => request('grad_year')
+        ]);
+
+        //todo: return to wait to home page and display a message 'wait for approval
+        return redirect('/');
     }
 
 
