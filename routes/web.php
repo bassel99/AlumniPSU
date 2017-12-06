@@ -16,7 +16,7 @@ Route::get('/', 'HomeController@index')->name('home');
 //go to registration page
 Route::get('/register', 'RegistrationController@create');
 
-//Store the data in the database
+//TODO: Store the data in the database
 Route::post('/register', 'RegistrationController@store');
 
 //go to sign in page controller

@@ -50,12 +50,20 @@ if (isset($_POST['submit'])) {
             <div class="modal-body">
                 <div style="text-align: center;"><h1>Register New User</h1></div>
 
-                <div class="form-group">Full Name
-                    <input type="text" class="form-control input-lg" placeholder="Full Name" name="name"/>
+                <div class="form-group">Full Name In Arabic
+                    <input type="text" class="form-control input-lg" placeholder="Full Name In Arabic" name="ArabicName"/>
+                </div>
+
+                <div class="form-group">Full Name In English
+                    <input type="text" class="form-control input-lg" placeholder="Full Name In English" name="englishName"/>
                 </div>
 
                 <div class="form-group">E-mail
                     <input type="email" class="form-control input-lg" placeholder="Email" name="email"/>
+                </div>
+
+                <div class="form-group">Password
+                    <input type="password" class="form-control input-lg" placeholder="Password" name="password"/>
                 </div>
 
                 <div class="form-group">Major
@@ -66,13 +74,36 @@ if (isset($_POST['submit'])) {
                     <input type="text" class="form-control input-lg" placeholder="Graduation Year" name="grad_year"/>
                 </div>
 
-                <div class="form-group">Username
-                    <input type="text" class="form-control input-lg" placeholder="Username" name="username"/>
+                <div class="form-group">University ID
+                    <input type="password" class="form-control input-lg" placeholder="University ID" name="uniID"/>
                 </div>
-                <div class="form-group">Password
-                    <input type="password" class="form-control input-lg" placeholder="Password" name="password"/>
+
+                <div class="form-group">GPA
+                    <input type="number" class="form-control input-lg" placeholder="GPA" name="GPA" step="0.01"/>
                 </div>
+
+                <div class="form-group">Nationality
+                    <input type="text" class="form-control input-lg" placeholder="Nationality" name="nationality"/>
+                </div>
+
+                <div class="form-group">Name of the institution Cooperative Education
+                    <input type="text" class="form-control input-lg" placeholder="institCoop" name="institCoop"/>
+                </div>
+
+                <div class="form-group">Current Employer
+                    <input type="text" class="form-control input-lg" placeholder="Current Employer" name="currentEmployer"/>
+                </div>
+
+                <div class="form-group">Contact Numbers
+                    <input type="text" class="form-control input-lg" placeholder="Contact Numbers" name="contactNumbers"/>
+                </div>
+
+
+
                 <br>
+                <br>
+                <br>
+
                 <div class="form-group">
                     <input type="submit" name="submit" class="btn btn-block btn-lg btn-col" value="Sign Up"
                            class="backcol"/><br>
