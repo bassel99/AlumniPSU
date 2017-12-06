@@ -3,19 +3,18 @@
 
 <head>
     <title>Alumni Home</title>
-    <link rel="icon" href="/public/images/logo_only.png">
+    <link rel="icon" href="/images/logo_only.PNG">
 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
-    <link rel="stylesheet" href="/css/home.css">
 
     <!-- Bootstrap core CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css"
           integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
 
     <!-- Custom style -->
+    <link rel="stylesheet" href="/css/home.css">
     <link rel="stylesheet" href="/css/css_login.css">
     <link rel="stylesheet" href="/css/navfixed.css">
 
@@ -84,9 +83,12 @@
                     </div>
                 </div>
             </form>
-            <br></div>
+            <br>
+        </div>
         <div class="col-sm-12 col-lg-3">
-            <button type="button" class="btn btn-info ">+ New Alumnu</button>
+            <a href="/addAlumni">
+                <button type="button" class="btn btn-info ">+ New Alumnu</button>
+            </a>
         </div>
 
 

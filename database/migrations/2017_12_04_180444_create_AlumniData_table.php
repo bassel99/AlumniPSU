@@ -31,7 +31,6 @@ class CreateAlumniDataTable extends Migration
             $table->string('timeForJob');
             $table->string('contactNumber');
             $table->string('email')->unique();
-            $table->boolean('acceptedFlag')->default('0');
             $table->timestamps();
 
         });

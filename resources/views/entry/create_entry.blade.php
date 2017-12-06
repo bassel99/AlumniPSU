@@ -26,13 +26,17 @@
                 <img src="/images/logo_hor.PNG">
             </h1>
         </div>
-        <form action="/registration.php" method="POST">
+        <form action="/addAlumni" method="POST">
+
+            {{ csrf_field() }}
 
             <div class="modal-body">
-                <div style="text-align: center;"><h1>Register New Alumnu</h1></div>
+                <div style="text-align: center;">
+                    <h1>Register New Alumnu</h1>
+                </div>
 
                 <div class="form-group">Full Name
-                    <input type="text" class="form-control input-lg" placeholder="Full Name" name="name"/>
+                    <input type="text" class="form-control input-lg" placeholder="Full Name" name="englishName"/>
                 </div>
 
                 <div class="form-group">Major
@@ -45,7 +49,9 @@
 
                 <div class="form-group">
                     <input type="submit" name="submit" class="btn btn-block btn-lg btn-col" value="Register"
-                           class="backcol"/><br>
+                           class="backcol"/>
+
+                    <br>
 
                 </div>
             </div>

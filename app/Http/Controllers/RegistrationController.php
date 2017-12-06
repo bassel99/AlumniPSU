@@ -68,6 +68,7 @@ class RegistrationController extends Controller
         ]);
 
         // sign them in
+        //todo: redirect to wait for approval of the university page
         //auth()->login($user);
 
         //  Redirect to the home page

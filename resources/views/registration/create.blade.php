@@ -20,23 +20,6 @@
 
 <body>
 
-<?php
-/*
-
-include 'include/include.php';
-if (isset($_POST['submit'])) {
-    $username = $_POST['username'];
-    $name = $_POST['name'];
-    $password = $_POST['password'];
-    $email = $_POST['email'];
-
-    $sql = "INSERT INTO users ( name,username,email,password) VALUES ('" . $name . "','" . $username . "','" . $email . "','" . $password . "')";
-    $result = mysqli_query($conn, $sql);
-    header('Location: create.blade.php');
-}*/
-
-?>
-
 
 <div class="container">
     <div class="modal-content">
@@ -51,14 +34,18 @@ if (isset($_POST['submit'])) {
             {{ csrf_field() }}
 
             <div class="modal-body">
-                <div style="text-align: center;"><h1>Register New User</h1></div>
+                <div style="text-align: center;">
+                    <h1>Register New User</h1>
+                </div>
 
                 <div class="form-group">Full Name In Arabic
-                    <input type="text" class="form-control input-lg" placeholder="Full Name In Arabic" name="ArabicName"/>
+                    <input type="text" class="form-control input-lg" placeholder="Full Name In Arabic"
+                           name="ArabicName"/>
                 </div>
 
                 <div class="form-group">Full Name In English
-                    <input type="text" class="form-control input-lg" placeholder="Full Name In English" name="englishName"/>
+                    <input type="text" class="form-control input-lg" placeholder="Full Name In English"
+                           name="englishName"/>
                 </div>
 
                 <div class="form-group">E-mail
@@ -70,7 +57,8 @@ if (isset($_POST['submit'])) {
                 </div>
 
                 <div class="form-group">Password Confirmation
-                    <input type="password" class="form-control input-lg" placeholder="Password Confirmation" name="password_confirmation" required>
+                    <input type="password" class="form-control input-lg" placeholder="Password Confirmation"
+                           name="password_confirmation" required>
                 </div>
 
                 <div class="form-group">Major
@@ -98,19 +86,23 @@ if (isset($_POST['submit'])) {
                 </div>
 
                 <div class="form-group">What happened after graduation
-                    <input type="text" class="form-control input-lg" placeholder="What happened after graduation" name="afterGraduation"/>
+                    <input type="text" class="form-control input-lg" placeholder="What happened after graduation"
+                           name="afterGraduation"/>
                 </div>
 
                 <div class="form-group">Time taken to get a job after graduation
-                    <input type="text" class="form-control input-lg" placeholder="Time taken to get a job after graduation" name="timeForJob"/>
+                    <input type="text" class="form-control input-lg"
+                           placeholder="Time taken to get a job after graduation" name="timeForJob"/>
                 </div>
 
                 <div class="form-group">Current Employer
-                    <input type="text" class="form-control input-lg" placeholder="Current Employer" name="currentEmployer"/>
+                    <input type="text" class="form-control input-lg" placeholder="Current Employer"
+                           name="currentEmployer"/>
                 </div>
 
                 <div class="form-group">Employer Contact Info
-                    <input type="text" class="form-control input-lg" placeholder="Employer Contact Info" name="employerContactInfo"/>
+                    <input type="text" class="form-control input-lg" placeholder="Employer Contact Info"
+                           name="employerContactInfo"/>
                 </div>
 
                 <div class="form-group">Job Title
@@ -118,7 +110,8 @@ if (isset($_POST['submit'])) {
                 </div>
 
                 <div class="form-group">Contact Numbers
-                    <input type="text" class="form-control input-lg" placeholder="Contact Numbers" name="contactNumbers"/>
+                    <input type="text" class="form-control input-lg" placeholder="Contact Numbers"
+                           name="contactNumbers"/>
                 </div>
 
 
@@ -133,6 +126,9 @@ if (isset($_POST['submit'])) {
                     <span class="pull-right"><a href="Login.php">Log In</a></span>
                 </div>
             </div>
+
+            @include('layouts.errors')
+
         </form>
     </div>
 </div>

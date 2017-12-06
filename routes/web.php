@@ -28,5 +28,11 @@ Route::post('/login', 'SessionsController@store');
 //logout logic
 Route::get('/logout', 'SessionsController@destroy');
 
+//Go to the page that user can create new alumni
+// todo: make the admin on the same controller and method
 Route::get('/addAlumni', 'EntriesController@create');
 
+//create new alumni by the user
+Route::post('/addAlumni', 'EntriesController@store');
+
+//todo: create admin table
