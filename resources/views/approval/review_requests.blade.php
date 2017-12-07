@@ -28,64 +28,78 @@
             </h1>
         </div>
 
-        <form action="Sign_up.php" method="POST">
+        <form action="/approveAlumni" method="POST">
 
             <div class="modal-body">
-                <div style="text-align: center;"><h1>Reviwe registred Alumnu</h1></div>
+                <div style="text-align: center;">
+                    <h1>Reviwe registred Alumnu</h1>
+                </div>
 
                 <div class="form-group">Arabic Name
                     <input type="text" value="" class="form-control input-lg"
                            placeholder="Arabic Name" name="Arabic_Name"/>
                 </div>
+
                 <div class="form-group">Student ID
                     <input type="text" value="" class="form-control input-lg"
                            placeholder="Student ID" name="Student_ID"/>
                 </div>
+
                 <div class="form-group">GPA
                     <input type="text" value="" class="form-control input-lg"
                            placeholder="GPA" name="GPA"/>
                 </div>
+
                 <div class="form-group">Nationality
                     <input type="text" value="" class="form-control input-lg"
                            placeholder="Nationality" name="Nationality"/>
                 </div>
+
                 <div class="form-group">Name of Co_op Company
                     <input type="text" value="" class="form-control input-lg"
                            placeholder="Name of Co_op Company"
                            name="co-op_company"/>
                 </div>
+
                 <div class="form-group">What Happened After training period
                     <input type="text" value="" class="form-control input-lg"
                            placeholder="What Happened After training period" name="after_co-op"/>
                 </div>
+
                 <div class="form-group">New Company name
                     <input type="text" value="" class="form-control input-lg"
                            placeholder="New Company name"
                            name="New_Company_name"/>
                 </div>
+
                 <div class="form-group">Job Title
                     <input type="text" value="" class="form-control input-lg"
                            placeholder="Job Title" name="Job_Title"/>
                 </div>
+
                 <div class="form-group">Company contact information
                     <input type="text" value="" class="form-control input-lg"
                            placeholder="Company contact information"
                            name="company_contact"/>
                 </div>
+
                 <div class="form-group">Employer
                     <input type="text" value="" class="form-control input-lg"
                            placeholder="Employer" name="Employer"/>
                 </div>
+
                 <div class="form-group">When did you join the company
                     <input type="text" value="" class="form-control input-lg"
                            placeholder="When did you join the company"
                            name="time_join"/>
                 </div>
+
                 <div class="form-group">Contact Numbers
                     <input type="text" value="" class="form-control input-lg"
                            placeholder="Contact Numbers "
                            name="contact_numbers"/>
                 </div>
+
                 <div class="form-group">Email
                     <input type="email" value="" class="form-control input-lg"
                            placeholder="Email" name="Email"/>

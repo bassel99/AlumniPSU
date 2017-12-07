@@ -30,6 +30,26 @@ class ApproveAlumniController extends Controller
     //approve alumni or reject
     public function approve()
     {
+        Pendingalumnu::create([
+            'id' => request('uniID'),
+            'englishName' => request('englishName'),
+            'arabName' => $arabName,
+            'major' => request('major'),
+            'GPA' => request('GPA'),
+            'nationality' => request('nationality'),
+            'graduation_year' => request('grad_year'),
+            'email' => $email,
+            'companyCoop' => request('institCoop'),
+            'afterGraduation' => request('afterGraduation'),
+            'timeForJob' => request('timeForJob'),
+            'employer' => request('currentEmployer'),
+            'employerContactInfo' => request('employerContactInfo'),
+            'jobTitle' => request('jobTitle'),
+            'contactNumber' => request('contactNumbers'),
+            'password' => bcrypt(request('password'))
+        ]);
+
+
         //todo: receive fields values from approve_new_alumni
         User::create([
             'name' => request('arabName'),
