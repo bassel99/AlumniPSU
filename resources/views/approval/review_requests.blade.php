@@ -30,98 +30,104 @@
 
         <form action="/approveAlumni" method="POST">
 
+            {{ csrf_field() }}
+
             <div class="modal-body">
 
                 <div style="text-align: center;">
                     <h1>Reviwe registred Alumnu</h1>
                 </div>
 
-                <div style="text-align: center;"><h1>Reviwe registred Alumnu</h1></div>
 
-                <div style="text-align: center;"><h1>Review registred Alumnu</h1></div>
-
-
-                <div class="form-group">Arabic Name
-                    <input type="text" value="" class="form-control input-lg"
-                           placeholder="Arabic Name" name="Arabic_Name"/>
+                <div class="form-group">Full Name In Arabic
+                    <input type="text" class="form-control input-lg" placeholder="Full Name In Arabic"
+                           name="ArabicName"/>
                 </div>
 
-                <div class="form-group">Student ID
-                    <input type="text" value="" class="form-control input-lg"
-                           placeholder="Student ID" name="Student_ID"/>
+                <div class="form-group">Full Name In English
+                    <input type="text" class="form-control input-lg" placeholder="Full Name In English"
+                           name="englishName"/>
+                </div>
+
+                <div class="form-group">E-mail
+                    <input type="email" class="form-control input-lg" placeholder="Email" name="email"/>
+                </div>
+
+                <div class="form-group">Password
+                    <input type="password" class="form-control input-lg" placeholder="Password" name="password"/>
+                </div>
+
+                <div class="form-group">Password Confirmation
+                    <input type="password" class="form-control input-lg" placeholder="Password Confirmation"
+                           name="password_confirmation" required>
+                </div>
+
+                <div class="form-group">Major
+                    <input type="text" class="form-control input-lg" placeholder="Major" name="major"/>
+                </div>
+
+                <div class="form-group">Year of graduation
+                    <input type="text" class="form-control input-lg" placeholder="Graduation Year" name="grad_year"/>
+                </div>
+
+                <div class="form-group">University ID
+                    <input type="number" class="form-control input-lg" placeholder="University ID" name="uniID"/>
                 </div>
 
                 <div class="form-group">GPA
-                    <input type="text" value="" class="form-control input-lg"
-                           placeholder="GPA" name="GPA"/>
+                    <input type="number" class="form-control input-lg" placeholder="GPA" step="0.01" name="GPA"/>
                 </div>
 
                 <div class="form-group">Nationality
-                    <input type="text" value="" class="form-control input-lg"
-                           placeholder="Nationality" name="Nationality"/>
+                    <input type="text" class="form-control input-lg" placeholder="Nationality" name="nationality"/>
                 </div>
 
-                <div class="form-group">Name of Co_op Company
-                    <input type="text" value="" class="form-control input-lg"
-                           placeholder="Name of Co_op Company"
-                           name="co-op_company"/>
+                <div class="form-group">Name of the institution Cooperative Education
+                    <input type="text" class="form-control input-lg" placeholder="institCoop" name="institCoop"/>
                 </div>
 
-                <div class="form-group">What Happened After training period
-                    <input type="text" value="" class="form-control input-lg"
-                           placeholder="What Happened After training period" name="after_co-op"/>
+                <div class="form-group">What happened after graduation
+                    <input type="text" class="form-control input-lg" placeholder="What happened after graduation"
+                           name="afterGraduation"/>
                 </div>
 
-                <div class="form-group">New Company name
-                    <input type="text" value="" class="form-control input-lg"
-                           placeholder="New Company name"
-                           name="New_Company_name"/>
+                <div class="form-group">Time taken to get a job after graduation
+                    <input type="text" class="form-control input-lg"
+                           placeholder="Time taken to get a job after graduation" name="timeForJob"/>
+                </div>
+
+                <div class="form-group">Current Employer
+                    <input type="text" class="form-control input-lg" placeholder="Current Employer"
+                           name="currentEmployer"/>
+                </div>
+
+                <div class="form-group">Employer Contact Info
+                    <input type="text" class="form-control input-lg" placeholder="Employer Contact Info"
+                           name="employerContactInfo"/>
                 </div>
 
                 <div class="form-group">Job Title
-                    <input type="text" value="" class="form-control input-lg"
-                           placeholder="Job Title" name="Job_Title"/>
-                </div>
-
-                <div class="form-group">Company contact information
-                    <input type="text" value="" class="form-control input-lg"
-                           placeholder="Company contact information"
-                           name="company_contact"/>
-                </div>
-
-                <div class="form-group">Employer
-                    <input type="text" value="" class="form-control input-lg"
-                           placeholder="Employer" name="Employer"/>
-                </div>
-
-                <div class="form-group">When did you join the company
-                    <input type="text" value="" class="form-control input-lg"
-                           placeholder="When did you join the company"
-                           name="time_join"/>
+                    <input type="text" class="form-control input-lg" placeholder="Job Title" name="jobTitle"/>
                 </div>
 
                 <div class="form-group">Contact Numbers
-                    <input type="text" value="" class="form-control input-lg"
-                           placeholder="Contact Numbers "
-                           name="contact_numbers"/>
-                </div>
-
-                <div class="form-group">Email
-                    <input type="email" value="" class="form-control input-lg"
-                           placeholder="Email" name="Email"/>
+                    <input type="text" class="form-control input-lg" placeholder="Contact Numbers"
+                           name="contactNumbers"/>
                 </div>
 
                 <div class="form-group">
-                    <input type="submit" name="Accept"
+                    <input type="submit" id="accept" name="submit"
                            class="btn btn-block btn-lg btn-col" value="Accept"
                            class="backcol"/><br>
-                    <input type="submit" name="Reject"
+                    <input type="submit" id="reject" name="submit"
                            class="btn btn-block btn-danger btn-lg btn-col" value="Reject"
                            class="backcol"/><br>
 
 
                 </div>
             </div>
+
+            @include('layouts.errors')
         </form>
     </div>
 </div>

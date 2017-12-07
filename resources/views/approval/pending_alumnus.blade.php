@@ -3,7 +3,7 @@
 
 <head>
     <title>Alumni Home</title>
-    <link rel="icon" href="images/logo_only.png">
+    <link rel="icon" href="/images/logo_only.PNG">
 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -26,13 +26,13 @@
     <div class="col-sm-3 col-lg-2">
         <div class="nav-side-menu">
             <div class="brand" style="color: #1091B9">
-                <center>
-                    <img src="images/logo_only.png">
+                <div style="text-align: center;">
+                    <img src="/images/logo_only.PNG">
                     <br>
                     <h3 style="color:white">Prince Sultan University</h3>
                     <p style="color:white">Alumni Database</p>
+                </div>
             </div>
-            </center>
             <i class="fa fa-bars fa-2x toggle-btn" data-toggle="collapse" data-target="#menu-content"></i>
 
             <div class="menu-list">
@@ -80,31 +80,27 @@
                         <th>Graduation</th>
                         <th>Phone Number</th>
                         <th>Email</th>
-
                     </tr>
                     </thead>
                     <tbody>
 
 
-                    <?php
+                    @foreach($pendingAlumnus as $pending)
 
-                    include 'include/include.php';
-                    $sql = 'SELECT * FROM database_alumni1 where GPA=3.65';
-                    $result = mysqli_query($conn, $sql);
+                        <tr>
 
-                    while ($row = mysqli_fetch_assoc($result)) {
+                            <td>{{ $pending->id }}</td>
+                            <td>{{ $pending->englishName }}</td>
+                            <td>{{ $pending->major }}</td>
+                            <td>{{ $pending->GPA }}</td>
+                            <td>{{ $pending->nationality }}</td>
+                            <td>{{ $pending->graduation_year }}</td>
+                            <td>{{ $pending->contactNumber }}</td>
+                            <td>{{ $pending->email }}</td>
 
-                        echo "<tr><td>" . $row['Id'] . "</td><td>" . $row['Name'] . "</td><td>" . $row['major'] . "</td><td>"
-                            . $row['GPA'] . "</td><td>" . $row['Nationality'] . "</td><td>" . $row['Graduation_Year'] . "</td><td>"
-                            . $row['Contact_Numbers'] . "</td><td>" . $row['E_Mail'] . "</td><td><button type=\"button\" class=\"btn btn-primary \"
-                        style=\"border-radius: 50%;\">Review</button><button type=\"button\" class=\"btn btn-danger \"style=\"
-                        border-radius: 50%;\">Reject</button></td></tr>";
+                        </tr>
 
-                    }
-
-
-
-                    ?>
+                    @endforeach
 
 
                     </tbody>

@@ -13,9 +13,7 @@ class CreateAlumniDataTable extends Migration
      */
     public function up()
     {
-        Schema::create('AlumniDatas', function (Blueprint $table) {
-
-            $table->increments('sequence');
+        Schema::create('alumnidatas', function (Blueprint $table) {
             $table->string('id');
             $table->string('englishName');
             $table->string('arabName');
@@ -32,7 +30,6 @@ class CreateAlumniDataTable extends Migration
             $table->string('contactNumber');
             $table->string('email')->unique();
             $table->timestamps();
-
         });
     }
 
@@ -43,6 +40,6 @@ class CreateAlumniDataTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('AlumniDatas');
+        Schema::dropIfExists('alumnidatas');
     }
 }

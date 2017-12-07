@@ -35,9 +35,14 @@ Route::get('/addAlumni', 'EntriesController@create');
 //create new alumni by the user, not the admin
 Route::post('/addAlumni', 'EntriesController@store');
 
+//display a message for the user who created the alumni telling him to wait
 Route::get('/waitForApproval', 'ApproveAlumniController@wait');
 
+//the admin view a specific request and decide to reject or accept
 Route::get('/reviewAlumni', 'ApproveAlumniController@review');
+
+//view all pending alumnus
+Route::get('/pendingAlumnus', 'ApproveAlumniController@viewAllPending');
 
 //approve alumni or reject logic
 Route::post('/approveAlumni', 'ApproveAlumniController@approve');

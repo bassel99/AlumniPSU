@@ -12,4 +12,8 @@ namespace App;
 class Pendingalumnu extends Model
 {
 
+    protected $primaryKey = 'email'; // or null
+
+    public $incrementing = false;
+
 }
