@@ -31,9 +31,15 @@
         <form action="/approveAlumni" method="POST">
 
             <div class="modal-body">
+
                 <div style="text-align: center;">
                     <h1>Reviwe registred Alumnu</h1>
                 </div>
+
+                <div style="text-align: center;"><h1>Reviwe registred Alumnu</h1></div>
+
+                <div style="text-align: center;"><h1>Review registred Alumnu</h1></div>
+
 
                 <div class="form-group">Arabic Name
                     <input type="text" value="" class="form-control input-lg"
@@ -106,9 +112,13 @@
                 </div>
 
                 <div class="form-group">
-                    <input type="submit" value="" name="submit"
-                           class="btn btn-block btn-lg btn-col" value="Register"
+                    <input type="submit" name="Accept"
+                           class="btn btn-block btn-lg btn-col" value="Accept"
                            class="backcol"/><br>
+                    <input type="submit" name="Reject"
+                           class="btn btn-block btn-danger btn-lg btn-col" value="Reject"
+                           class="backcol"/><br>
+
 
                 </div>
             </div>
@@ -117,7 +127,7 @@
 </div>
 
 
-?>
+
 
 </body>
 
