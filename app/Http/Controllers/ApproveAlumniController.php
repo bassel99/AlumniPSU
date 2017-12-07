@@ -22,6 +22,11 @@ class ApproveAlumniController extends Controller
         return view('approval.wait_approval');
     }
 
+    public function review()
+    {
+        return view('approval.review_requests');
+    }
+
     //approve alumni or reject
     public function approve()
     {

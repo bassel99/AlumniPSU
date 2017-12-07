@@ -32,10 +32,12 @@ Route::get('/logout', 'SessionsController@destroy');
 // todo: make the admin on the same controller and method
 Route::get('/addAlumni', 'EntriesController@create');
 
-//create new alumni by the user
+//create new alumni by the user, not the admin
 Route::post('/addAlumni', 'EntriesController@store');
 
-Route::get('/waitForApproval', 'ApprovalAlumniController@wait');
+Route::get('/waitForApproval', 'ApproveAlumniController@wait');
+
+Route::get('/reviewAlumni', 'ApproveAlumniController@review');
 
 //approve alumni or reject
 Route::post('/approveAlumni', 'ApproveAlumniController@approve');
