@@ -39,5 +39,5 @@ Route::get('/waitForApproval', 'ApproveAlumniController@wait');
 
 Route::get('/reviewAlumni', 'ApproveAlumniController@review');
 
-//approve alumni or reject
+//approve alumni or reject logic
 Route::post('/approveAlumni', 'ApproveAlumniController@approve');
