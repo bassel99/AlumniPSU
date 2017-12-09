@@ -115,10 +115,11 @@
                            name="contactNumbers" value="{{ $pendingalumnu->contactNumbers }}"/>
                 </div>
 
+                <br>
+
                 <div class="form-group">
                     <input type="submit" id="accept" name="submit"
-                           class="btn btn-block btn-lg btn-col" value="Accept"
-                           class="backcol"/><br>
+                           class="btn btn-block btn-lg btn-col backcol" value="Accept"/><br>
                     <input type="submit" id="reject" name="submit"
                            class="btn btn-block btn-danger btn-lg btn-col" value="Reject"
                            class="backcol"/><br>

@@ -76,7 +76,7 @@ if (isset($_POST['submit'])) {
 
                 <div class="form-group">
                     <input type="submit" name="submit" class="btn btn-block btn-lg btn-col backcol"
-                           value="Login" required/>
+                           value="Login"/>
 
                     <br>
 
