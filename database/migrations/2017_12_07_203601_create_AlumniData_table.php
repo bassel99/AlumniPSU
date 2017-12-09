@@ -27,7 +27,7 @@ class CreateAlumniDataTable extends Migration
             $table->string('employerContactInfo');
             $table->string('employer');
             $table->string('timeForJob');
-            $table->string('contactNumber');
+            $table->string('contactNumbers');
             $table->string('email')->unique();
             $table->timestamps();
         });

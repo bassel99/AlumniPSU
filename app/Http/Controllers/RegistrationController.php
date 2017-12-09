@@ -57,7 +57,7 @@ class RegistrationController extends Controller
             'employer' => request('currentEmployer'),
             'employerContactInfo' => request('employerContactInfo'),
             'jobTitle' => request('jobTitle'),
-            'contactNumber' => request('contactNumbers'),
+            'contactNumbers' => request('contactNumbers'),
             'password' => bcrypt(request('password'))
         ]);
 

@@ -15,9 +15,9 @@ class HomeController extends Controller
 
     public function index()
     {
-        $users = Alumnidata::latest()->get();
+        $alumnus = Alumnidata::latest()->get();
 
-        return view('home', compact('users'));
+        return view('home', compact('alumnus'));
     }
 
 }

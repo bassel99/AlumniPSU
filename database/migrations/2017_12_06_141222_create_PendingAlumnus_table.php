@@ -37,7 +37,7 @@ class CreatePendingAlumnusTable extends Migration
             $table->string('employerContactInfo')->nullable();
             $table->string('employer')->nullable();
             $table->string('timeForJob')->nullable();
-            $table->string('contactNumber')->nullable();
+            $table->string('contactNumbers')->nullable();
             $table->string('email')->unique()->nullable();
             $table->string('password')->nullable();
             $table->timestamps();

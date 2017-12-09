@@ -24,9 +24,9 @@ class ApproveAlumniController extends Controller
         return view('approval.wait_approval');
     }
 
-    public function review()
+    public function review(Pendingalumnu $pendingalumnu)
     {
-        return view('approval.review_requests', compact(''));
+        return view('approval.review_requests', compact('pendingalumnu'));
     }
 
     public function viewAllPending()
@@ -79,7 +79,7 @@ class ApproveAlumniController extends Controller
                     'employer' => request('currentEmployer'),
                     'employerContactInfo' => request('employerContactInfo'),
                     'jobTitle' => request('jobTitle'),
-                    'contactNumber' => request('contactNumbers'),
+                    'contactNumbers' => request('contactNumbers'),
                 ]);
 
 
@@ -87,7 +87,7 @@ class ApproveAlumniController extends Controller
                 User::create([
                     'name' => $arabName,
                     'email' => $email,
-                    'password' => bcrypt(request('password'))
+                    'password' => request('password')
                 ]);
 
                 //in order for this method to work, email must be as primary key in Pendingalumnu model

@@ -41,78 +41,88 @@
 
                 <div class="form-group">Full Name In Arabic
                     <input type="text" class="form-control input-lg" placeholder="Full Name In Arabic"
-                           name="ArabicName"/>
+                           name="ArabicName" value="{{ $pendingalumnu->arabName }}"/>
                 </div>
 
                 <div class="form-group">Full Name In English
                     <input type="text" class="form-control input-lg" placeholder="Full Name In English"
-                           name="englishName"/>
+                           name="englishName" value="{{ $pendingalumnu->englishName }}"/>
                 </div>
 
                 <div class="form-group">E-mail
-                    <input type="email" class="form-control input-lg" placeholder="Email" name="email"/>
+                    <input type="email" class="form-control input-lg" placeholder="Email" name="email"
+                           value="{{ $pendingalumnu->email }}"/>
                 </div>
 
                 <div class="form-group">Password
-                    <input type="password" class="form-control input-lg" placeholder="Password" name="password"/>
+                    <input type="password" class="form-control input-lg" placeholder="Password" name="password"
+                           value="{{ $pendingalumnu->password }}" readonly/>
                 </div>
 
                 <div class="form-group">Password Confirmation
                     <input type="password" class="form-control input-lg" placeholder="Password Confirmation"
-                           name="password_confirmation" required>
+                           name="password_confirmation" value="{{ $pendingalumnu->password }}" readonly>
                 </div>
 
                 <div class="form-group">Major
-                    <input type="text" class="form-control input-lg" placeholder="Major" name="major"/>
+                    <input type="text" class="form-control input-lg" placeholder="Major" name="major"
+                           value="{{ $pendingalumnu->major}}"/>
                 </div>
 
                 <div class="form-group">Year of graduation
-                    <input type="text" class="form-control input-lg" placeholder="Graduation Year" name="grad_year"/>
+                    <input type="text" class="form-control input-lg" placeholder="Graduation Year" name="grad_year"
+                           value="{{ $pendingalumnu->graduation_year }}"/>
                 </div>
 
                 <div class="form-group">University ID
-                    <input type="number" class="form-control input-lg" placeholder="University ID" name="uniID"/>
+                    <input type="number" class="form-control input-lg" placeholder="University ID" name="uniID"
+                           value="{{ $pendingalumnu->id }}"/>
                 </div>
 
                 <div class="form-group">GPA
-                    <input type="number" class="form-control input-lg" placeholder="GPA" step="0.01" name="GPA"/>
+                    <input type="number" class="form-control input-lg" placeholder="GPA" step="0.01" name="GPA"
+                           value="{{ $pendingalumnu->GPA }}"/>
                 </div>
 
                 <div class="form-group">Nationality
-                    <input type="text" class="form-control input-lg" placeholder="Nationality" name="nationality"/>
+                    <input type="text" class="form-control input-lg" placeholder="Nationality" name="nationality"
+                           value="{{ $pendingalumnu->nationality }}"/>
                 </div>
 
                 <div class="form-group">Name of the institution Cooperative Education
-                    <input type="text" class="form-control input-lg" placeholder="institCoop" name="institCoop"/>
+                    <input type="text" class="form-control input-lg" placeholder="institCoop" name="institCoop"
+                           value="{{ $pendingalumnu->companyCoop }}"/>
                 </div>
 
                 <div class="form-group">What happened after graduation
                     <input type="text" class="form-control input-lg" placeholder="What happened after graduation"
-                           name="afterGraduation"/>
+                           name="afterGraduation" value="{{ $pendingalumnu->afterGraduation }}"/>
                 </div>
 
                 <div class="form-group">Time taken to get a job after graduation
                     <input type="text" class="form-control input-lg"
-                           placeholder="Time taken to get a job after graduation" name="timeForJob"/>
+                           placeholder="Time taken to get a job after graduation" name="timeForJob"
+                           value="{{ $pendingalumnu->timeForJob }}"/>
                 </div>
 
                 <div class="form-group">Current Employer
                     <input type="text" class="form-control input-lg" placeholder="Current Employer"
-                           name="currentEmployer"/>
+                           name="currentEmployer" value="{{ $pendingalumnu->employer }}"/>
                 </div>
 
                 <div class="form-group">Employer Contact Info
                     <input type="text" class="form-control input-lg" placeholder="Employer Contact Info"
-                           name="employerContactInfo"/>
+                           name="employerContactInfo" value="{{ $pendingalumnu->employerContactInfo }}"/>
                 </div>
 
                 <div class="form-group">Job Title
-                    <input type="text" class="form-control input-lg" placeholder="Job Title" name="jobTitle"/>
+                    <input type="text" class="form-control input-lg" placeholder="Job Title" name="jobTitle"
+                           value="{{ $pendingalumnu->jobTitle }}"/>
                 </div>
 
                 <div class="form-group">Contact Numbers
                     <input type="text" class="form-control input-lg" placeholder="Contact Numbers"
-                           name="contactNumbers"/>
+                           name="contactNumbers" value="{{ $pendingalumnu->contactNumbers }}"/>
                 </div>
 
                 <div class="form-group">

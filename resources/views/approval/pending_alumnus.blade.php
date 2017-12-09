@@ -98,6 +98,20 @@
                             <td>{{ $pending->contactNumber }}</td>
                             <td>{{ $pending->email }}</td>
 
+                            <td>
+                                <a href="/pendingAlumnus/{{ $pending->email }}">
+                                    <button type="button" class="btn btn-primary "
+                                            style="border-radius: 50%;">Review
+                                    </button>
+                                </a>
+
+                                <a href="">
+                                    <button type="button" class="btn btn-danger"
+                                            style="border-radius: 50%;">Reject
+                                    </button>
+                                </a>
+                            </td>
+
                         </tr>
 
                     @endforeach

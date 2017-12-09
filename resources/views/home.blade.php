@@ -110,18 +110,18 @@
                     </thead>
                     <tbody>
 
-                    @foreach($users as $user)
+                    @foreach($alumnus as $alumni)
 
                         <tr>
 
-                            <td>{{ $user->id }}</td>
-                            <td>{{ $user->englishName }}</td>
-                            <td>{{ $user->major }}</td>
-                            <td>{{ $user->GPA }}</td>
-                            <td>{{ $user->nationality }}</td>
-                            <td>{{ $user->graduation_year }}</td>
-                            <td>{{ $user->contactNumber }}</td>
-                            <td>{{ $user->email }}</td>
+                            <td>{{ $alumni->id }}</td>
+                            <td>{{ $alumni->englishName }}</td>
+                            <td>{{ $alumni->major }}</td>
+                            <td>{{ $alumni->GPA }}</td>
+                            <td>{{ $alumni->nationality }}</td>
+                            <td>{{ $alumni->graduation_year }}</td>
+                            <td>{{ $alumni->contactNumbers }}</td>
+                            <td>{{ $alumni->email }}</td>
 
                         </tr>
 

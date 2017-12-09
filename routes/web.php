@@ -39,7 +39,7 @@ Route::post('/addAlumni', 'EntriesController@store');
 Route::get('/waitForApproval', 'ApproveAlumniController@wait');
 
 //the admin view a specific request and decide to reject or accept
-Route::get('/reviewAlumni', 'ApproveAlumniController@review');
+Route::get('/pendingAlumnus/{pendingalumnu}', 'ApproveAlumniController@review');
 
 //view all pending alumnus
 Route::get('/pendingAlumnus', 'ApproveAlumniController@viewAllPending');
