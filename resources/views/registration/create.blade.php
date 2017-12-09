@@ -38,35 +38,35 @@
                     <h1>Register New User</h1>
                 </div>
 
-                <div class="form-group">Full Name In Arabic
+                <div class="form-group">Full Name In Arabic<i class="required"></i>
                     <input type="text" class="form-control input-lg" placeholder="Full Name In Arabic"
-                           name="ArabicName"/>
+                           name="ArabicName" required/>
                 </div>
 
-                <div class="form-group">Full Name In English
+                <div class="form-group ">Full Name In English<i class="required"></i>
                     <input type="text" class="form-control input-lg" placeholder="Full Name In English"
-                           name="englishName"/>
+                           name="englishName" required/>
                 </div>
 
-                <div class="form-group">E-mail
-                    <input type="email" class="form-control input-lg" placeholder="Email" name="email"/>
+                <div class="form-group">E-mail<i class="required"></i>
+                    <input type="email" class="form-control input-lg" placeholder="Email" name="email" required/>
                 </div>
 
-                <div class="form-group">Password
-                    <input type="password" class="form-control input-lg" placeholder="Password" name="password"/>
+                <div class="form-group">Password<i class="required"></i>
+                    <input type="password" class="form-control input-lg" placeholder="Password" name="password" required/>
                 </div>
 
-                <div class="form-group">Password Confirmation
+                <div class="form-group">Password Confirmation<i class="required"></i>
                     <input type="password" class="form-control input-lg" placeholder="Password Confirmation"
                            name="password_confirmation" required>
                 </div>
 
-                <div class="form-group">Major
-                    <input type="text" class="form-control input-lg" placeholder="Major" name="major"/>
+                <div class="form-group">Major<i class="required"></i>
+                    <input type="text" class="form-control input-lg" placeholder="Major" name="major" required/>
                 </div>
 
-                <div class="form-group">Year of graduation
-                    <input type="text" class="form-control input-lg" placeholder="Graduation Year" name="grad_year"/>
+                <div class="form-group">Year of graduation<i class="required"></i>
+                    <input type="text" class="form-control input-lg" placeholder="Graduation Year" name="grad_year" required/>
                 </div>
 
                 <div class="form-group">University ID
@@ -77,41 +77,41 @@
                     <input type="number" class="form-control input-lg" placeholder="GPA" step="0.01" name="GPA"/>
                 </div>
 
-                <div class="form-group">Nationality
-                    <input type="text" class="form-control input-lg" placeholder="Nationality" name="nationality"/>
+                <div class="form-group">Nationality<i class="required"></i>
+                    <input type="text" class="form-control input-lg" placeholder="Nationality" name="nationality" required/>
                 </div>
 
-                <div class="form-group">Name of the institution Cooperative Education
-                    <input type="text" class="form-control input-lg" placeholder="institCoop" name="institCoop"/>
+                <div class="form-group">Name of the institution Cooperative Education<i class="required"></i>
+                    <input type="text" class="form-control input-lg" placeholder="institCoop" name="institCoop" required/>
                 </div>
 
-                <div class="form-group">What happened after graduation
+                <div class="form-group">What happened after graduation<i class="required"></i>
                     <input type="text" class="form-control input-lg" placeholder="What happened after graduation"
-                           name="afterGraduation"/>
+                           name="afterGraduation" required/>
                 </div>
 
-                <div class="form-group">Time taken to get a job after graduation
+                <div class="form-group">Time taken to get a job after graduation<i class="required"></i>
                     <input type="text" class="form-control input-lg"
-                           placeholder="Time taken to get a job after graduation" name="timeForJob"/>
+                           placeholder="Time taken to get a job after graduation" name="timeForJob" required/>
                 </div>
 
-                <div class="form-group">Current Employer
+                <div class="form-group">Current Employer<i class="required"></i>
                     <input type="text" class="form-control input-lg" placeholder="Current Employer"
-                           name="currentEmployer"/>
+                           name="currentEmployer" required/>
                 </div>
 
-                <div class="form-group">Employer Contact Info
+                <div class="form-group">Employer Contact Info<i class="required"></i>
                     <input type="text" class="form-control input-lg" placeholder="Employer Contact Info"
-                           name="employerContactInfo"/>
+                           name="employerContactInfo" required/>
                 </div>
 
-                <div class="form-group">Job Title
-                    <input type="text" class="form-control input-lg" placeholder="Job Title" name="jobTitle"/>
+                <div class="form-group">Job Title<i class="required"></i>
+                    <input type="text" class="form-control input-lg" placeholder="Job Title" name="jobTitle" required/>
                 </div>
 
-                <div class="form-group">Contact Numbers
+                <div class="form-group">Contact Numbers<i class="required"></i>
                     <input type="text" class="form-control input-lg" placeholder="Contact Numbers"
-                           name="contactNumbers"/>
+                           name="contactNumbers" required/>
                 </div>
 
 

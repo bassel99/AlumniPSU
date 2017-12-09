@@ -42,9 +42,11 @@
 
 <div class="container">
     <div class="center">
-        <h1>Your request has been received, our team will send you an email very soon...</h1>
+        <h1>Your request has been received, our team will response to your request very soon...</h1>
 
-        <a href="/">Return to login page</a>
+        <br><br>
+
+        <a href="/"><h3>Return</h3></a>
     </div>
 </div>
 

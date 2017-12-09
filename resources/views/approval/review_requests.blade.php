@@ -35,53 +35,53 @@
             <div class="modal-body">
 
                 <div style="text-align: center;">
-                    <h1>Reviwe registred Alumnu</h1>
+                    <h1>Review registered Alumni</h1>
                 </div>
 
 
-                <div class="form-group">Full Name In Arabic
+                <div class="form-group">Full Name In Arabic<i class="required"></i>
                     <input type="text" class="form-control input-lg" placeholder="Full Name In Arabic"
-                           name="ArabicName" value="{{ $pendingalumnu->arabName }}"/>
+                           name="ArabicName" value="{{ $pendingalumnu->arabName }}" required/>
                 </div>
 
-                <div class="form-group">Full Name In English
+                <div class="form-group">Full Name In English<i class="required"></i>
                     <input type="text" class="form-control input-lg" placeholder="Full Name In English"
-                           name="englishName" value="{{ $pendingalumnu->englishName }}"/>
+                           name="englishName" value="{{ $pendingalumnu->englishName }}" required/>
                 </div>
 
-                <div class="form-group">E-mail
+                <div class="form-group">E-mail<i class="required"></i>
                     <input type="email" class="form-control input-lg" placeholder="Email" name="email"
-                           value="{{ $pendingalumnu->email }}"/>
+                           value="{{ $pendingalumnu->email }}" required/>
                 </div>
 
-                <div class="form-group">Major
+                <div class="form-group">Major<i class="required"></i>
                     <input type="text" class="form-control input-lg" placeholder="Major" name="major"
-                           value="{{ $pendingalumnu->major}}"/>
+                           value="{{ $pendingalumnu->major}}" required/>
                 </div>
 
-                <div class="form-group">Year of graduation
+                <div class="form-group">Year of graduation<i class="required"></i>
                     <input type="text" class="form-control input-lg" placeholder="Graduation Year" name="grad_year"
-                           value="{{ $pendingalumnu->graduation_year }}"/>
+                           value="{{ $pendingalumnu->graduation_year }}" required/>
                 </div>
 
-                <div class="form-group">University ID
+                <div class="form-group">University ID<i class="required"></i>
                     <input type="number" class="form-control input-lg" placeholder="University ID" name="uniID"
-                           value="{{ $pendingalumnu->id }}"/>
+                           value="{{ $pendingalumnu->id }}" required/>
                 </div>
 
-                <div class="form-group">GPA
+                <div class="form-group">GPA<i class="required"></i>
                     <input type="number" class="form-control input-lg" placeholder="GPA" step="0.01" name="GPA"
-                           value="{{ $pendingalumnu->GPA }}"/>
+                           value="{{ $pendingalumnu->GPA }}" required/>
                 </div>
 
-                <div class="form-group">Nationality
+                <div class="form-group">Nationality<i class="required"></i>
                     <input type="text" class="form-control input-lg" placeholder="Nationality" name="nationality"
-                           value="{{ $pendingalumnu->nationality }}"/>
+                           value="{{ $pendingalumnu->nationality }}" required/>
                 </div>
 
-                <div class="form-group">Name of the institution Cooperative Education
+                <div class="form-group">Name of the institution Cooperative Education<i class="required"></i>
                     <input type="text" class="form-control input-lg" placeholder="institCoop" name="institCoop"
-                           value="{{ $pendingalumnu->companyCoop }}"/>
+                           value="{{ $pendingalumnu->companyCoop }}" required/>
                 </div>
 
                 <div class="form-group">What happened after graduation
@@ -116,19 +116,30 @@
                 </div>
 
                 <br>
+                <br>
 
                 <div class="form-group">
                     <input type="submit" id="accept" name="submit"
                            class="btn btn-block btn-lg btn-col backcol" value="Accept"/><br>
-                    <input type="submit" id="reject" name="submit"
-                           class="btn btn-block btn-danger btn-lg btn-col" value="Reject"
-                           class="backcol"/><br>
-
-
                 </div>
             </div>
 
             @include('layouts.errors')
+        </form>
+
+        <form action="/approveAlumni/{{ $pendingalumnu->sequence }}" method="POST" style="margin-top: -45px">
+
+            {{ csrf_field() }}
+
+            <div class="modal-body">
+                <div class="form-group">
+                    {{--todo: even if reject is pressed the fields is required, we need to fix these problems--}}
+                    <input type="submit" id="reject" name="submit"
+                           class="btn btn-block btn-danger btn-lg btn-col" value="Reject"
+                           class="backcol"/><br>
+                </div>
+            </div>
+
         </form>
     </div>
 </div>

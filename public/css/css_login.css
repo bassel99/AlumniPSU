@@ -8219,5 +8219,10 @@ body {
     background: #2226ff;
 }
 
+.required:after {
+    content: " *";
+    color: red;
+}
+
 /*# sourceMappingURL=bootstrap.css.map */
   

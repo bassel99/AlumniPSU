@@ -22,12 +22,12 @@ class CreateAlumniDataTable extends Migration
             $table->string('nationality');
             $table->string('graduation_year');
             $table->string('companyCoop');
-            $table->string('afterGraduation');
-            $table->string('jobTitle');
-            $table->string('employerContactInfo');
-            $table->string('employer');
-            $table->string('timeForJob');
-            $table->string('contactNumbers');
+            $table->string('afterGraduation')->nullable();
+            $table->string('jobTitle')->nullable();
+            $table->string('employerContactInfo')->nullable();
+            $table->string('employer')->nullable();
+            $table->string('timeForJob')->nullable();
+            $table->string('contactNumbers')->nullable();
             $table->string('email')->unique();
             $table->timestamps();
         });

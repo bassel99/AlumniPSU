@@ -21,7 +21,7 @@ class EntriesController extends Controller
     public function store()
     {
         $this->validate(request(), [
-            'englishName' => 'required',
+            'name' => 'required',
             'major' => 'required',
             'grad_year' => 'required'
         ]);
@@ -33,7 +33,7 @@ class EntriesController extends Controller
         ]);
 
         //todo: return to home page and display a message 'wait for approval
-        return redirect('/');
+        return redirect('/waitForApproval');
     }
 
 

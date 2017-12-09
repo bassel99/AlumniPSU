@@ -48,13 +48,15 @@
                 </div>
 
                 <div class="form-group">
-                    <input type="submit" name="submit" class="btn btn-block btn-lg btn-col" value="Register"
-                           class="backcol"/>
+                    <input type="submit" name="submit" class="btn btn-block btn-lg btn-col backcol" value="Add"/>
 
                     <br>
 
                 </div>
             </div>
+
+            @include('layouts.errors')
+
         </form>
     </div>
 </div>
