@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 
+{{--View all pending alumnus here--}}
+
 <head>
     <title>Alumni Home</title>
     <link rel="icon" href="/images/logo_only.PNG">
@@ -85,31 +87,33 @@
                     <tbody>
 
 
-                    @foreach($pendingAlumnus as $pending)
+                    @foreach($pendingAlumnus as $pendingAlumni)
 
                         <tr>
 
-                            <td>{{ $pending->id }}</td>
-                            <td>{{ $pending->englishName }}</td>
-                            <td>{{ $pending->major }}</td>
-                            <td>{{ $pending->GPA }}</td>
-                            <td>{{ $pending->nationality }}</td>
-                            <td>{{ $pending->graduation_year }}</td>
-                            <td>{{ $pending->contactNumber }}</td>
-                            <td>{{ $pending->email }}</td>
+                            <td>{{ $pendingAlumni->id }}</td>
+                            <td>{{ $pendingAlumni->englishName }}</td>
+                            <td>{{ $pendingAlumni->major }}</td>
+                            <td>{{ $pendingAlumni->GPA }}</td>
+                            <td>{{ $pendingAlumni->nationality }}</td>
+                            <td>{{ $pendingAlumni->graduation_year }}</td>
+                            <td>{{ $pendingAlumni->contactNumber }}</td>
+                            <td>{{ $pendingAlumni->email }}</td>
 
                             <td>
-                                <a href="/pendingAlumnus/{{ $pending->sequence }}">
+                                <a href="/pendingAlumnus/{{ $pendingAlumni->sequence }}">
                                     <button type="button" class="btn btn-primary "
                                             style="border-radius: 50%;">Review
                                     </button>
                                 </a>
 
-                                <a href="/approveAlumni/PP">
-                                    <button type="button" class="btn btn-danger"
-                                            style="border-radius: 50%;">Reject
-                                    </button>
-                                </a>
+                                <form action="/approveAlumni/{{ $pendingAlumni->sequence }}" method="POST">
+
+                                    {{ csrf_field() }}
+                                    <input type="submit" id="reject" name="submit" class="btn btn-danger" value="Reject"
+                                           style="border-radius: 50%;"/>
+                                </form>
+
                             </td>
 
                         </tr>

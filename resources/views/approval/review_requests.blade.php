@@ -133,7 +133,6 @@
 
             <div class="modal-body">
                 <div class="form-group">
-                    {{--todo: even if reject is pressed the fields is required, we need to fix these problems--}}
                     <input type="submit" id="reject" name="submit"
                            class="btn btn-block btn-danger btn-lg btn-col" value="Reject"
                            class="backcol"/><br>
