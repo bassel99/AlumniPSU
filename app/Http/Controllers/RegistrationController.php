@@ -6,12 +6,24 @@ use App\Alumnidata;
 use App\Pendingalumnu;
 use App\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class RegistrationController extends Controller
 {
 
+    public function __construct()
+    {
+        //$this->middleware('guest')->except('destroy');
+    }
+
+
     public function create()
     {
+        //todo: it is better to redirect somehow from middleware from the constructor
+        if (Auth::check())
+            // The user is logged in...
+            return redirect('/');
+
         return view('registration.create');
     }
 
@@ -20,6 +32,10 @@ class RegistrationController extends Controller
      */
     public function store()
     {
+        if (Auth::check())
+            // The user is logged in...
+            return redirect('/');
+
         //validate the form
         $this->validate(request(), [
             'ArabicName' => 'required',
@@ -63,7 +79,6 @@ class RegistrationController extends Controller
 
         //todo: if the data is added to alumni table, but for some reason it
         //is not added to the User table, then discard the data
-
 
 
         //todo: redirect to wait for approval of the university page

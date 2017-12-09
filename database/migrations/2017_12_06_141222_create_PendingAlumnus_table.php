@@ -39,7 +39,7 @@ class CreatePendingAlumnusTable extends Migration
             $table->string('timeForJob')->nullable();
             $table->string('contactNumbers')->nullable();
             $table->string('email')->unique()->nullable();
-            $table->string('password')->nullable();
+            $table->string('password')->nullable()->default(bcrypt('psu1234'));
             $table->timestamps();
         });
     }

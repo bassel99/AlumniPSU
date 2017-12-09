@@ -44,5 +44,5 @@ Route::get('/pendingAlumnus/{pendingalumnu}', 'ApproveAlumniController@review');
 //view all pending alumnus
 Route::get('/pendingAlumnus', 'ApproveAlumniController@viewAllPending');
 
-//approve alumni or reject logic
-Route::post('/approveAlumni', 'ApproveAlumniController@approve');
+//approve alumni or reject logic, what is between brackets {wildcard} must be the name of the argument in approve method
+Route::post('/approveAlumni/{pendingalumnu}', 'ApproveAlumniController@approve');

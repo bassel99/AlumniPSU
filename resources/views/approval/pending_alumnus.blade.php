@@ -99,7 +99,7 @@
                             <td>{{ $pending->email }}</td>
 
                             <td>
-                                <a href="/pendingAlumnus/{{ $pending->email }}">
+                                <a href="/pendingAlumnus/{{ $pending->sequence }}">
                                     <button type="button" class="btn btn-primary "
                                             style="border-radius: 50%;">Review
                                     </button>

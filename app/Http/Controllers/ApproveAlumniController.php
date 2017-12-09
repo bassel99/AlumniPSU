@@ -37,7 +37,7 @@ class ApproveAlumniController extends Controller
     }
 
     //approve alumni or reject logic
-    public function approve()
+    public function approve(Pendingalumnu $pendingalumnu)
     {
         if (isset($_POST['submit'])) {
             $value = $_POST['submit'];
@@ -48,7 +48,6 @@ class ApproveAlumniController extends Controller
                     'ArabicName' => 'required',
                     'englishName' => 'required',
                     'email' => 'required|email',
-                    'password' => 'required|confirmed',
                     'major' => 'required',
                     'grad_year' => 'required',
                     'uniID' => 'required',
@@ -87,16 +86,18 @@ class ApproveAlumniController extends Controller
                 User::create([
                     'name' => $arabName,
                     'email' => $email,
-                    'password' => request('password')
+                    'password' => $pendingalumnu->password
                 ]);
 
-                //in order for this method to work, email must be as primary key in Pendingalumnu model
-                //it is already set as primary key in the Pendingalumnu class
-                Pendingalumnu::destroy($email);
+            } //end if statement
 
-                return redirect('/pendingAlumnus');
+            //whether it is accepted or rejected, the data will be deleted from pendingalumni table
+            //in order for this method to work, $sequence must be as primary key in Pendingalumnu model
+            //it is already set as primary key in the Pendingalumnu class
+            Pendingalumnu::destroy($pendingalumnu->sequence);
 
-            }
+            return redirect('/pendingAlumnus');
+
         }
     }
 

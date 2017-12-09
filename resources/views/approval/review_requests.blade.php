@@ -28,7 +28,7 @@
             </h1>
         </div>
 
-        <form action="/approveAlumni" method="POST">
+        <form action="/approveAlumni/{{ $pendingalumnu->sequence }}" method="POST">
 
             {{ csrf_field() }}
 
@@ -52,16 +52,6 @@
                 <div class="form-group">E-mail
                     <input type="email" class="form-control input-lg" placeholder="Email" name="email"
                            value="{{ $pendingalumnu->email }}"/>
-                </div>
-
-                <div class="form-group">Password
-                    <input type="password" class="form-control input-lg" placeholder="Password" name="password"
-                           value="{{ $pendingalumnu->password }}" readonly/>
-                </div>
-
-                <div class="form-group">Password Confirmation
-                    <input type="password" class="form-control input-lg" placeholder="Password Confirmation"
-                           name="password_confirmation" value="{{ $pendingalumnu->password }}" readonly>
                 </div>
 
                 <div class="form-group">Major

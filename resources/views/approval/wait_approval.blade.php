@@ -43,6 +43,8 @@
 <div class="container">
     <div class="center">
         <h1>Your request has been received, our team will send you an email very soon...</h1>
+
+        <a href="/">Return to login page</a>
     </div>
 </div>
 

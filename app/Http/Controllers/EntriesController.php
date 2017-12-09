@@ -21,15 +21,15 @@ class EntriesController extends Controller
     public function store()
     {
         $this->validate(request(), [
-            'name' => 'required',
+            'englishName' => 'required',
             'major' => 'required',
             'grad_year' => 'required'
         ]);
 
         Pendingalumnu::create([
-            'name' => request('name'),
+            'englishName' => request('name'),
             'major' => request('major'),
-            'grad_year' => request('grad_year')
+            'graduation_year' => request('grad_year')
         ]);
 
         //todo: return to home page and display a message 'wait for approval
