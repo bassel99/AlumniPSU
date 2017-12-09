@@ -42,7 +42,7 @@
 
 <div class="container">
     <div class="center">
-        <h1>Your request has been received, our team will response to your request very soon...</h1>
+        <h1>Your request has been received, our team will respond to your request very soon...</h1>
 
         <br><br>
 

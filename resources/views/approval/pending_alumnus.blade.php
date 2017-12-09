@@ -105,7 +105,7 @@
                                     </button>
                                 </a>
 
-                                <a href="">
+                                <a href="/approveAlumni/PP">
                                     <button type="button" class="btn btn-danger"
                                             style="border-radius: 50%;">Reject
                                     </button>
