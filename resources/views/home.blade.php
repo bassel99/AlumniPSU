@@ -138,6 +138,9 @@
         <div class="col-sm-12 col-lg-3">
             <a href="/addAlumni">
                 <button type="button" class="btn btn-info ">+ New Alumnu</button>
+                <button type="button" class="btn btn-info ">Review</button>
+
+
             </a>
         </div>
 
