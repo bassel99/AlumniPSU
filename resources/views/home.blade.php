@@ -45,6 +45,12 @@
                         </a>
                     </li>
 
+                    <li class="collapsed ">
+                        <a href="/logout">
+                            <i class="fa fa-user fa-lg"></i> Log Out
+                        </a>
+                    </li>
+
                     <li data-toggle="collapse" data-target="#products">
                         <a href="#">
                             <i class="fa fa-gift fa-lg"></i> test

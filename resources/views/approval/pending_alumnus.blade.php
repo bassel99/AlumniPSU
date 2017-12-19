@@ -97,13 +97,13 @@
                             <td>{{ $pendingAlumni->GPA }}</td>
                             <td>{{ $pendingAlumni->nationality }}</td>
                             <td>{{ $pendingAlumni->graduation_year }}</td>
-                            <td>{{ $pendingAlumni->contactNumber }}</td>
+                            <td>{{ $pendingAlumni->contactNumbers }}</td>
                             <td>{{ $pendingAlumni->email }}</td>
 
                             <td>
                                 <a href="/pendingAlumnus/{{ $pendingAlumni->sequence }}">
                                     <button type="button" class="btn btn-primary "
-                                            style="border-radius: 50%;">Review
+                                            style="border-radius: 75%;">Review
                                     </button>
                                 </a>
 
@@ -111,7 +111,7 @@
 
                                     {{ csrf_field() }}
                                     <input type="submit" id="reject" name="submit" class="btn btn-danger" value="Reject"
-                                           style="border-radius: 50%;"/>
+                                           style="border-radius: 75%;"/>
                                 </form>
 
                             </td>
