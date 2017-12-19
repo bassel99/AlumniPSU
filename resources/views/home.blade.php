@@ -22,6 +22,50 @@
 </head>
 
 <body>
+<script>
+
+    $(document).ready(function () {
+
+        $("#changeMajor").on('change', function () {
+            var value = $(this).val();
+            $.ajax(
+                {
+                    url: 'changeMajor.php',
+                    type: 'POST',
+                    data: 'request=' + value,
+                    beforeSend: function () {
+                        $("#table_alumni").html('Working on...');
+                    },
+                    success: function (data) {
+                        $("#table_alumni").html(data);
+                    }
+
+                }
+            )
+        })
+        $("#Nationality").on('change', function () {
+            var value = $(this).val();
+            $.ajax(
+                {
+                    url: 'Nationality.php',
+                    type: 'POST',
+                    data: 'Nationality=' + value,
+                    beforeSend: function () {
+                        $("#table_alumni").html('Working on...');
+                    },
+                    success: function (data) {
+                        $("#table_alumni").html(data);
+                    }
+
+                }
+            )
+        })
+
+    })
+
+
+</script>
+
 
 <div class="row">
     <div class="col-sm-3 col-lg-2">
@@ -97,9 +141,44 @@
             </a>
         </div>
 
+        <div class="col-sm-12 col-lg-3">
+            <form>
+                <select class="form-control" id="changeMajor" name="changeMajor"">
+                <option value=" " disabled selected>Major..</option>
+                <option value="Software Engineering">Software Engineering</option>
+                <option value="Communications Engineering">Communications Engineering</option>
+                <option value="Computer Science">Computer Science</option>
+                <option value="Finance">Finance</option>
+                <option value="Marketing">Marketing</option>
+                <option value="Information Systems">Information Systems</option>
+                </select>
+
+
+            </form>
+            <br>
+        </div>
+
+
+        <div class="col-sm-12 col-lg-3">
+            <form>
+                <select class="form-control" id="Nationality" name="Nationality"">
+                <option value=" " disabled selected>Nationality..</option>
+                <option value="Saudi">Saudi Arabia</option>
+                <option value="Syrian">Syrian</option>
+                <option value="Jordanian">Jordanian</option>
+                <option value="Lebanese">Lebanese</option>
+                <option value="Yemen">Yemen</option>
+                <option value="Palestinian">Palestinian</option>
+                </select>
+
+
+            </form>
+            <br>
+        </div>
+
 
         <div class="col-sm-10 col-lg-12">
-            <div class="table-responsive">
+            <div id="table_alumni" class="table-responsive">
                 <table class="table table-striped table-hover" style="background-color:white ">
                     <thead>
                     <tr>
