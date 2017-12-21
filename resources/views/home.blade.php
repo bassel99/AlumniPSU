@@ -109,6 +109,7 @@
             <form>
                 <select class="form-control" id="changeMajor" name="changeMajor">
                     <option value=" " disabled selected>Major..</option>
+                    <option value="All">All Majors</option>
                     <option value="Software Engineering">Software Engineering</option>
                     <option value="Communications Engineering">Communications Engineering</option>
                     <option value="Computer Science">Computer Science</option>
@@ -125,7 +126,7 @@
 
         <div class="col-sm-12 col-lg-3">
             <form>
-                <select class="form-control" id="Nationality" name="Nationality">
+                <select class="form-control" id="changeNationality" name="changeNationality">
                     <option value=" " disabled selected>Nationality..</option>
                     <option value="All">All Nationalities</option>
                     <option value="Saudi">Saudi Arabia</option>
@@ -198,7 +199,7 @@
     $(document).ready(function () {
 
 
-        $("#Nationality").on('change', function () {
+        $("#changeNationality").on('change', function () {
             var nationality = $(this);
             var keyword = nationality.val();
 
@@ -212,6 +213,21 @@
                 }
             });
 
+        });
+
+        $("#changeMajor").on('change', function () {
+            var major = $(this);
+            var keyword = major.val();
+
+            $.ajax({
+                url : '{{URL::to('/changeMajorFilter')}}',
+                type: 'GET',
+                data: {'search':keyword},
+                success: function (data) {
+                    console.log('success');
+                    $('#tableBody').html(data);
+                }
+            });
         });
 
 

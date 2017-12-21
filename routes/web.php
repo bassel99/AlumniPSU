@@ -47,6 +47,6 @@ Route::get('/pendingAlumnus', 'ApproveAlumniController@viewAllPending');
 //approve alumni or reject logic, what is between brackets {wildcard} must be the name of the argument in approve method
 Route::post('/approveAlumni/{pendingalumnu}', 'ApproveAlumniController@approve');
 
-Route::get('/changeMajor', 'filtersController@major');
+Route::get('/changeMajorFilter', 'filtersController@major');
 
 Route::get('/changeNationalityFilter', 'filtersController@nationality');
