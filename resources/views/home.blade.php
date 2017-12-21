@@ -108,8 +108,7 @@
         <div class="col-sm-12 col-lg-3">
             <form>
                 <select class="form-control" id="changeMajor" name="changeMajor">
-                    <option value=" " disabled selected>Major..</option>
-                    <option value="All">All Majors</option>
+                    <option value="All" readonly="true" selected>Major..</option>
                     <option value="Software Engineering">Software Engineering</option>
                     <option value="Communications Engineering">Communications Engineering</option>
                     <option value="Computer Science">Computer Science</option>
@@ -127,11 +126,10 @@
         <div class="col-sm-12 col-lg-3">
             <form>
                 <select class="form-control" id="changeNationality" name="changeNationality">
-                    <option value=" " disabled selected>Nationality..</option>
-                    <option value="All">All Nationalities</option>
+                    <option value="All" readonly="true" selected>Nationality..</option>
                     <option value="Saudi">Saudi Arabia</option>
-                    <option value="Syrian">Syrian</option>
-                    <option value="Jordanian">Jordanian</option>
+                    <option value="Syria">Syria</option>
+                    <option value="Jordan">Jordan</option>
                     <option value="Lebanese">Lebanese</option>
                     <option value="Yemen">Yemen</option>
                     <option value="Palestinian">Palestinian</option>
@@ -198,15 +196,18 @@
 <script>
     $(document).ready(function () {
 
-
-        $("#changeNationality").on('change', function () {
-            var nationality = $(this);
-            var keyword = nationality.val();
+        $("#changeNationality, #changeMajor").on('change', function () {
+            var nationality = $('#changeNationality');
+            var major = $('#changeMajor');
+            console.log(nationality.val());
+            console.log(major.val());
+            var keywordNationality = nationality.val();
+            var keywordMajor = major.val();
 
             $.ajax({
-                url : '{{URL::to('/changeNationalityFilter')}}',
+                url : '/changeNationalityFilter',
                 type: 'GET',
-                data: {'search':keyword},
+                data: {'searchNationality':keywordNationality, 'searchMajor':keywordMajor},
                 success: function (data) {
                     console.log('success');
                     $('#tableBody').html(data);
@@ -214,45 +215,6 @@
             });
 
         });
-
-        $("#changeMajor").on('change', function () {
-            var major = $(this);
-            var keyword = major.val();
-
-            $.ajax({
-                url : '{{URL::to('/changeMajorFilter')}}',
-                type: 'GET',
-                data: {'search':keyword},
-                success: function (data) {
-                    console.log('success');
-                    $('#tableBody').html(data);
-                }
-            });
-        });
-
-
-        /*var value = $(this).val();
-            $.ajax(
-                {
-                    url: '',
-                    type: 'POST',
-                    data: 'Nationality=' + value,
-                    beforeSend: function () {
-                        $("#table_alumni").html('Working on...');
-                    },
-                    success: function (data) {
-                        $("#table_alumni").html(data);
-                    }
-
-                }
-            )*/
-
-        /*$('#changeMajor').onchange(function () {
-
-
-
-        });
-*/
     });
 
 
@@ -261,7 +223,7 @@
 
 <script type="text/javascript">
 
-    $.ajaxSetup({ headers: { 'csrftoken' : '{{ csrf_token() }}' } });
+    $.ajaxSetup({headers: {'csrftoken': '{{ csrf_token() }}'}});
 
 </script>
 

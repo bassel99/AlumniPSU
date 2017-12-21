@@ -15,13 +15,22 @@ class filtersController extends Controller
 
     public function nationality(Request $request)
     {
+        $all = 'All';
         if ($request->ajax()) {
 
-            $keyword = $request->search;
-            if ($keyword === 'All') {
+            $keywordNationality = $request->searchNationality;
+            $keywordMajor = $request->searchMajor;
+            if ($keywordNationality == $all && $keywordMajor == $all) {
+                //success
                 $alumnus = Alumnidata::latest()->get();
+            } elseif ($keywordNationality === $all && $keywordMajor !== $all) {
+                //success
+                $alumnus = Alumnidata::latest()->where('major', $keywordMajor)->get();
+            } else if ($keywordNationality !== $all && $keywordMajor == $all) {
+                //success
+                $alumnus = Alumnidata::latest()->where('nationality', $keywordNationality)->get();
             } else {
-                $alumnus = Alumnidata::latest()->where('nationality', $request->search)->get();
+                $alumnus = Alumnidata::latest()->where('nationality', $keywordNationality)->where('major', $keywordMajor)->get();
             }
 
             return Response($this->designBluePrint($alumnus));
