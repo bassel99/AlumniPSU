@@ -215,6 +215,25 @@
             });
 
         });
+
+        $("#Graduation_Year").on('change', function () {
+            var value = $(this).val();
+            $.ajax(
+                {
+                    url: 'yearGraduation.php',
+                    type: 'POST',
+                    data: 'Graduation_Year=' + value,
+                    beforeSend: function () {
+                        $("#table_alumni").html('Working on...');
+                    },
+                    success: function (data) {
+                        $("#table_alumni").html(data);
+                    }
+
+                }
+            )
+        })
+
     });
 
 
