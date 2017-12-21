@@ -1,7 +1,9 @@
 <!DOCTYPE html>
+
 <html lang="en">
 
 <head>
+    <meta name="_token" content="{{ csrf_token() }}">
     <title>Alumni Home</title>
     <link rel="icon" href="/images/logo_only.PNG">
 
@@ -10,8 +12,10 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <!-- Bootstrap core CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css"
-          integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+    <!-- Bootstrap core jquery and js -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
     <!-- Custom style -->
     <link rel="stylesheet" href="/css/home.css">
@@ -22,50 +26,6 @@
 </head>
 
 <body>
-<script>
-
-    $(document).ready(function () {
-
-        $("#changeMajor").on('change', function () {
-            var value = $(this).val();
-            $.ajax(
-                {
-                    url: 'changeMajor.php',
-                    type: 'POST',
-                    data: 'request=' + value,
-                    beforeSend: function () {
-                        $("#table_alumni").html('Working on...');
-                    },
-                    success: function (data) {
-                        $("#table_alumni").html(data);
-                    }
-
-                }
-            )
-        })
-        $("#Nationality").on('change', function () {
-            var value = $(this).val();
-            $.ajax(
-                {
-                    url: 'Nationality.php',
-                    type: 'POST',
-                    data: 'Nationality=' + value,
-                    beforeSend: function () {
-                        $("#table_alumni").html('Working on...');
-                    },
-                    success: function (data) {
-                        $("#table_alumni").html(data);
-                    }
-
-                }
-            )
-        })
-
-    })
-
-
-</script>
-
 
 <div class="row">
     <div class="col-sm-3 col-lg-2">
@@ -123,37 +83,38 @@
 
         <br>
         <div class="col-sm-12 col-lg-3">
-            <form action="#" method="post">
-                <div class="input-group">
-                    <input type="text" class="form-control" placeholder="Search">
-                    <div class="input-group-btn">
-                        <button class="btn btn-default" type="submit">
-                            <i class="glyphicon glyphicon-search"></i>
-                        </button>
-                    </div>
+            <div class="input-group">
+                <input id="search" type="text" class="form-control" placeholder="Search">
+                <div class="input-group-btn">
+                    <button class="btn btn-default" type="submit">
+                        <i class="glyphicon glyphicon-search"></i>
+                    </button>
                 </div>
-            </form>
+            </div>
             <br>
         </div>
         <div class="col-sm-12 col-lg-3">
             <a href="/addAlumni">
                 <button type="button" class="btn btn-info ">+ New Alumnu</button>
-                <button type="button" class="btn btn-info ">Review</button>
-
-
             </a>
+            {{--@if ($alumni->role == 'admin')
+                <a href="/pendingAlumnus">
+                    <button type="button" class="btn btn-info ">Review</button>
+
+                </a>
+            @endif--}}
         </div>
 
         <div class="col-sm-12 col-lg-3">
             <form>
-                <select class="form-control" id="changeMajor" name="changeMajor"">
-                <option value=" " disabled selected>Major..</option>
-                <option value="Software Engineering">Software Engineering</option>
-                <option value="Communications Engineering">Communications Engineering</option>
-                <option value="Computer Science">Computer Science</option>
-                <option value="Finance">Finance</option>
-                <option value="Marketing">Marketing</option>
-                <option value="Information Systems">Information Systems</option>
+                <select class="form-control" id="changeMajor" name="changeMajor">
+                    <option value=" " disabled selected>Major..</option>
+                    <option value="Software Engineering">Software Engineering</option>
+                    <option value="Communications Engineering">Communications Engineering</option>
+                    <option value="Computer Science">Computer Science</option>
+                    <option value="Finance">Finance</option>
+                    <option value="Marketing">Marketing</option>
+                    <option value="Information Systems">Information Systems</option>
                 </select>
 
 
@@ -164,14 +125,14 @@
 
         <div class="col-sm-12 col-lg-3">
             <form>
-                <select class="form-control" id="Nationality" name="Nationality"">
-                <option value=" " disabled selected>Nationality..</option>
-                <option value="Saudi">Saudi Arabia</option>
-                <option value="Syrian">Syrian</option>
-                <option value="Jordanian">Jordanian</option>
-                <option value="Lebanese">Lebanese</option>
-                <option value="Yemen">Yemen</option>
-                <option value="Palestinian">Palestinian</option>
+                <select class="form-control" id="Nationality" name="Nationality">
+                    <option value=" " disabled selected>Nationality..</option>
+                    <option value="Saudi">Saudi Arabia</option>
+                    <option value="Syrian">Syrian</option>
+                    <option value="Jordanian">Jordanian</option>
+                    <option value="Lebanese">Lebanese</option>
+                    <option value="Yemen">Yemen</option>
+                    <option value="Palestinian">Palestinian</option>
                 </select>
 
 
@@ -196,12 +157,12 @@
 
                     </tr>
                     </thead>
-                    <tbody>
+                    <tbody id="tableBody">
+
 
                     @foreach($alumnus as $alumni)
 
-                        <tr>
-
+                        <tr id>
                             <td>{{ $alumni->id }}</td>
                             <td>{{ $alumni->englishName }}</td>
                             <td>{{ $alumni->major }}</td>
@@ -210,22 +171,82 @@
                             <td>{{ $alumni->graduation_year }}</td>
                             <td>{{ $alumni->contactNumbers }}</td>
                             <td>{{ $alumni->email }}</td>
-
                         </tr>
 
 
                     @endforeach
 
-
                     </tbody>
                 </table>
+                <div id="temp"></div>
             </div>
         </div>
 
 
     </div>
 </div>
+
+
+
 </body>
+
+
+
+
+<script>
+    $(document).ready(function () {
+
+
+        $("#Nationality").on('change', function () {
+            var nationality = $(this);
+            var keyword = nationality.val();
+
+            $.ajax({
+                url : '{{URL::to('/changeNationalityFilter')}}',
+                type: 'GET',
+                data: {'search':keyword},
+                success: function (data) {
+                    console.log('success');
+                    $('#tableBody').html(data);
+                }
+            });
+
+        });
+
+
+        /*var value = $(this).val();
+            $.ajax(
+                {
+                    url: '',
+                    type: 'POST',
+                    data: 'Nationality=' + value,
+                    beforeSend: function () {
+                        $("#table_alumni").html('Working on...');
+                    },
+                    success: function (data) {
+                        $("#table_alumni").html(data);
+                    }
+
+                }
+            )*/
+
+        /*$('#changeMajor').onchange(function () {
+
+
+
+        });
+*/
+    });
+
+
+
+</script>
+
+<script type="text/javascript">
+
+    $.ajaxSetup({ headers: { 'csrftoken' : '{{ csrf_token() }}' } });
+
+</script>
 
 
 </html>
