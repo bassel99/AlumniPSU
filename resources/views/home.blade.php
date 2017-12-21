@@ -127,6 +127,7 @@
             <form>
                 <select class="form-control" id="Nationality" name="Nationality">
                     <option value=" " disabled selected>Nationality..</option>
+                    <option value="All">All Nationalities</option>
                     <option value="Saudi">Saudi Arabia</option>
                     <option value="Syrian">Syrian</option>
                     <option value="Jordanian">Jordanian</option>

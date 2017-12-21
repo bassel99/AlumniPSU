@@ -12,7 +12,12 @@ class filtersController extends Controller
     {
         if ($request->ajax()) {
 
-            $alumnus = Alumnidata::latest()->where('nationality', $request->search)->get();
+            $keyword = $request->search;
+            if ($keyword === 'All') {
+                $alumnus = Alumnidata::latest()->get();
+            } else {
+                $alumnus = Alumnidata::latest()->where('nationality', $request->search)->get();
+            }
             $output = '';
             foreach ($alumnus as $key => $alumni) {
 
@@ -37,7 +42,7 @@ class filtersController extends Controller
             }
             return Response($output);
         }
-        return 'fdsadda';
+        return null;
     }
 
     public function major()
