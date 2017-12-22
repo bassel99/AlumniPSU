@@ -111,7 +111,7 @@
         <div class="col-sm-12 col-lg-3">
             <form>
                 <select class="form-control" id="changeMajor" name="changeMajor">
-                    <option value="" readonly="true" selected>Major..</option>
+                    <option value="" selected>Major..</option>
                     <option value="Software Engineering">Software Engineering</option>
                     <option value="Communications Engineering">Communications Engineering</option>
                     <option value="Computer Science">Computer Science</option>
@@ -129,7 +129,7 @@
         <div class="col-sm-12 col-lg-3">
             <form>
                 <select class="form-control" id="changeNationality" name="changeNationality">
-                    <option value="" readonly="true" selected>Nationality..</option>
+                    <option value="" selected>Nationality..</option>
                     <option value="Saudi">Saudi Arabia</option>
                     <option value="Syria">Syria</option>
                     <option value="Jordan">Jordan</option>
@@ -184,28 +184,28 @@
 
                     </tr>
                     </thead>
-                    <tbody id="tableBody">
+
+                        <tbody id="tableBody">
 
 
-                    @foreach($alumnus as $alumni)
+                        @foreach($alumnus as $alumni)
 
-                        <tr>
-                            <td>{{ $alumni->id }}</td>
-                            <td>{{ $alumni->englishName }}</td>
-                            <td>{{ $alumni->major }}</td>
-                            <td>{{ $alumni->GPA }}</td>
-                            <td>{{ $alumni->nationality }}</td>
-                            <td>{{ $alumni->graduation_year }}</td>
-                            <td>{{ $alumni->contactNumbers }}</td>
-                            <td>{{ $alumni->email }}</td>
-                        </tr>
+                            <tr>
+                                <td>{{ $alumni->id }}</td>
+                                <td>{{ $alumni->englishName }}</td>
+                                <td>{{ $alumni->major }}</td>
+                                <td>{{ $alumni->GPA }}</td>
+                                <td>{{ $alumni->nationality }}</td>
+                                <td>{{ $alumni->graduation_year }}</td>
+                                <td>{{ $alumni->contactNumbers }}</td>
+                                <td>{{ $alumni->email }}</td>
+                            </tr>
 
 
-                    @endforeach
+                        @endforeach
 
-                    </tbody>
+                        </tbody>
                 </table>
-                <div id="temp"></div>
             </div>
         </div>
 
@@ -222,8 +222,6 @@
 
 <script>
     $(document).ready(function () {
-
-        var tableDiv = $('#tableDiv');
 
         $("#search, #changeNationality, #changeMajor, #Graduation_Year").bind('change keyup', function () {
             var searchAlumni = $('#search');
@@ -242,12 +240,18 @@
             $.ajax({
                 url: '/changeFilter',
                 type: 'GET',
-                data: {'searchAlumni': keywordSearch,'searchNationality': keywordNationality, 'searchMajor': keywordMajor, 'searchYear': keywordYear},
+                data: {
+                    'searchAlumni': keywordSearch,
+                    'searchNationality': keywordNationality,
+                    'searchMajor': keywordMajor,
+                    'searchYear': keywordYear
+                },
                 success: function (data) {
-                    tableDiv.hide();
                     var tableBody = $('#tableBody');
+                    var tableWrapper = $('#table_alumni');
+                    tableWrapper.hide();
                     tableBody.html(data);
-                    tableDiv.slideDown(300);
+                    tableWrapper.slideDown(200);
                 }
             });
 
