@@ -17,14 +17,17 @@ class filtersController extends Controller
     {
         if ($request->ajax()) {
 
+            $keywordAlumni = $request->searchAlumni;
             $keywordNationality = $request->searchNationality;
             $keywordMajor = $request->searchMajor;
             $keywordYear = $request->searchYear;
 
-            $alumnus = Alumnidata::latest()->where('nationality', "LIKE", "%{$keywordNationality}%")
-            ->where('major',"LIKE", "%{$keywordMajor}%")
-            ->where('graduation_year', "LIKE", "%{$keywordYear}%")
-            ->get();
+            $alumnus = Alumnidata::latest()
+                ->where('englishName', "LIKE", "%{$keywordAlumni}%")
+                ->where('nationality', "LIKE", "%{$keywordNationality}%")
+                ->where('major', "LIKE", "%{$keywordMajor}%")
+                ->where('graduation_year', "LIKE", "%{$keywordYear}%")
+                ->get();
 
             return Response($this->designBluePrint($alumnus));
         }

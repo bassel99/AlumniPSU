@@ -88,7 +88,7 @@
         <br>
         <div class="col-sm-12 col-lg-3">
             <div class="input-group">
-                <input id="search" type="text" class="form-control" placeholder="Search">
+                <input id="search" value="" type="text" class="form-control" placeholder="Search">
                 <div class="input-group-btn">
                     <button class="btn btn-default" type="submit">
                         <i class="glyphicon glyphicon-search"></i>
@@ -169,7 +169,7 @@
 
 
         <div class="col-sm-10 col-lg-12">
-            <div id="table_alumni" style="display: none;" class="table-responsive">
+            <div id="table_alumni" class="table-responsive">
                 <table class="table table-striped table-hover" style="background-color:white ">
                     <thead>
                     <tr>
@@ -223,20 +223,18 @@
 <script>
     $(document).ready(function () {
 
-        var tableDiv = $('#table_alumni');
-        tableDiv.slideDown(1000);
+        var tableDiv = $('#tableDiv');
 
-        /*Array.from(bodyRows.forEach(function (value) {
-            value.fadeIn(200);
-        }));*/
-
-        $("#changeNationality, #changeMajor, #Graduation_Year").on('change', function () {
+        $("#search, #changeNationality, #changeMajor, #Graduation_Year").bind('change keyup', function () {
+            var searchAlumni = $('#search');
             var nationality = $('#changeNationality');
             var major = $('#changeMajor');
             var year = $('#Graduation_Year');
+            console.log(searchAlumni.val());
             console.log(nationality.val());
             console.log(major.val());
             console.log(year.val());
+            var keywordSearch = searchAlumni.val();
             var keywordNationality = nationality.val();
             var keywordMajor = major.val();
             var keywordYear = year.val();
@@ -244,7 +242,7 @@
             $.ajax({
                 url: '/changeFilter',
                 type: 'GET',
-                data: {'searchNationality': keywordNationality, 'searchMajor': keywordMajor, 'searchYear': keywordYear},
+                data: {'searchAlumni': keywordSearch,'searchNationality': keywordNationality, 'searchMajor': keywordMajor, 'searchYear': keywordYear},
                 success: function (data) {
                     tableDiv.hide();
                     var tableBody = $('#tableBody');
