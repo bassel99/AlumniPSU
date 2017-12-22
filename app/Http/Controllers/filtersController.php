@@ -20,17 +20,31 @@ class filtersController extends Controller
 
             $keywordNationality = $request->searchNationality;
             $keywordMajor = $request->searchMajor;
-            if ($keywordNationality == $all && $keywordMajor == $all) {
+            $keywordYear = $request->searchYear;
+
+            if ($keywordNationality == $all && $keywordMajor == $all && $keywordYear == $all) {
                 //success
                 $alumnus = Alumnidata::latest()->get();
-            } elseif ($keywordNationality === $all && $keywordMajor !== $all) {
-                //success
-                $alumnus = Alumnidata::latest()->where('major', $keywordMajor)->get();
-            } else if ($keywordNationality !== $all && $keywordMajor == $all) {
+            } else if ($keywordNationality !== $all && $keywordMajor == $all && $keywordYear == $all) {
                 //success
                 $alumnus = Alumnidata::latest()->where('nationality', $keywordNationality)->get();
+            } elseif ($keywordNationality !== $all && $keywordMajor == $all && $keywordYear !== $all) {
+                //success
+                $alumnus = Alumnidata::latest()->where('major', $keywordMajor)->get();
+            } else if ($keywordNationality !== $all && $keywordMajor !== $all && $keywordYear == $all) {
+                //success
+                $alumnus = Alumnidata::latest()->where('year', $keywordYear)->get();
+            } else if ($keywordNationality == $all && $keywordMajor !== $all && $keywordYear == $all) {
+                //success
+                $alumnus = Alumnidata::latest()->where('nationality', $keywordNationality)->where('year', $keywordYear)->get();
+            } else if ($keywordNationality == $all && $keywordMajor !== $all && $keywordYear !== $all) {
+                //success
+                $alumnus = Alumnidata::latest()->where('major', $keywordMajor)->where('year', $keywordYear)->get();
+            } else if ($keywordNationality == $all && $keywordMajor == $all && $keywordYear !== $all) {
+                //success
+                $alumnus = Alumnidata::latest()->where('year', $keywordYear)->get();
             } else {
-                $alumnus = Alumnidata::latest()->where('nationality', $keywordNationality)->where('major', $keywordMajor)->get();
+                $alumnus = Alumnidata::latest()->where('nationality', $keywordNationality)->where('major', $keywordMajor)->where('year', $keywordYear)->get();
             }
 
             return Response($this->designBluePrint($alumnus));
@@ -38,21 +52,7 @@ class filtersController extends Controller
         return null;
     }
 
-    public function major(Request $request)
-    {
-        if ($request->ajax()) {
 
-            $keyword = $request->search;
-            if ($keyword === 'All') {
-                $alumnus = Alumnidata::latest()->get();
-            } else {
-                $alumnus = Alumnidata::latest()->where('major', $request->search)->get();
-            }
-
-            return Response($this->designBluePrint($alumnus));
-        }
-        return null;
-    }
 
     public function graduationYear()
     {
