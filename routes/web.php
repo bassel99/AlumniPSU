@@ -50,3 +50,6 @@ Route::post('/approveAlumni/{pendingalumnu}', 'ApproveAlumniController@approve')
 Route::get('/changeMajorFilter', 'filtersController@major');
 
 Route::get('/changeNationalityFilter', 'filtersController@nationality');
+
+//view the selected alumni data
+Route::get('profile/{alumniKey}', 'ProfilesController@show');

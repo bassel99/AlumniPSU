@@ -60,8 +60,8 @@
                     </li>
 
                     <li data-toggle="collapse" data-target="#products">
-                        <a href="#">
-                            <i class="fa fa-gift fa-lg"></i> test
+                        <a href="/profile/{{Auth::user()->email}}">
+                            <i class="fa fa-gift fa-lg"></i> My Profile
                             <span class="arrow"></span>
                         </a>
                     </li>
