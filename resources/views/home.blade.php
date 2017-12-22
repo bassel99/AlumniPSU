@@ -169,7 +169,7 @@
 
 
         <div class="col-sm-10 col-lg-12">
-            <div id="table_alumni" class="table-responsive">
+            <div id="table_alumni" style="display: none;" class="table-responsive">
                 <table class="table table-striped table-hover" style="background-color:white ">
                     <thead>
                     <tr>
@@ -189,7 +189,7 @@
 
                     @foreach($alumnus as $alumni)
 
-                        <tr id>
+                        <tr>
                             <td>{{ $alumni->id }}</td>
                             <td>{{ $alumni->englishName }}</td>
                             <td>{{ $alumni->major }}</td>
@@ -223,6 +223,13 @@
 <script>
     $(document).ready(function () {
 
+        var tableDiv = $('#table_alumni');
+        tableDiv.slideDown(1000);
+
+        /*Array.from(bodyRows.forEach(function (value) {
+            value.fadeIn(200);
+        }));*/
+
         $("#changeNationality, #changeMajor, #Graduation_Year").on('change', function () {
             var nationality = $('#changeNationality');
             var major = $('#changeMajor');
@@ -239,8 +246,10 @@
                 type: 'GET',
                 data: {'searchNationality': keywordNationality, 'searchMajor': keywordMajor, 'searchYear': keywordYear},
                 success: function (data) {
-                    console.log('success');
-                    $('#tableBody').html(data);
+                    tableDiv.hide();
+                    var tableBody = $('#tableBody');
+                    tableBody.html(data);
+                    tableDiv.slideDown(300);
                 }
             });
 
