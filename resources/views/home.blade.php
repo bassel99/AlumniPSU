@@ -97,6 +97,9 @@
             <a href="/addAlumni">
                 <button type="button" class="btn btn-info ">+ New Alumnu</button>
             </a>
+            <a href="#">
+                <button type="button" class="btn btn-info ">Review Alumni</button>
+            </a>
             {{--@if ($alumni->role == 'admin')
                 <a href="/pendingAlumnus">
                     <button type="button" class="btn btn-info ">Review</button>
@@ -133,6 +136,31 @@
                     <option value="Lebanese">Lebanese</option>
                     <option value="Yemen">Yemen</option>
                     <option value="Palestinian">Palestinian</option>
+                </select>
+
+
+            </form>
+            <br>
+        </div>
+
+
+        <div class="col-sm-12 col-lg-3">
+            <form>
+                <select class="form-control" id="Graduation_Year" name="Graduation_Year">
+                    <option value=" " disabled selected>Graduation Year..</option>
+                    <option value="2003/2004">2003/2004</option>
+                    <option value="2004/2005">2004/2005</option>
+                    <option value="2005/2006">2005/2006</option>
+                    <option value="2006/2007">2006/2007</option>
+                    <option value="2007/2008">2007/2008</option>
+                    <option value="2008/2009">2008/2009</option>
+                    <option value="2009/2010">2009/2010</option>
+                    <option value="2010/2011">2010/2011</option>
+                    <option value="2011/2012">2011/2012</option>
+                    <option value="2012/2013">2012/2013</option>
+                    <option value="2013/2014">2013/2014</option>
+                    <option value="2014/2015">2014/2015</option>
+                    <option value="2015/2016">2015/2016</option>
                 </select>
 
 
@@ -210,7 +238,7 @@
             $.ajax({
                 url : '/changeNationalityFilter',
                 type: 'GET',
-                data: {'searchNationality':keywordNationality, 'searchMajor':keywordMajor},
+                data: {'searchNationality': keywordNationality, 'searchMajor': keywordMajor, 'searchYear': keywordYear},
                 success: function (data) {
                     console.log('success');
                     $('#tableBody').html(data);
@@ -219,23 +247,7 @@
 
         });
 
-        $("#Graduation_Year").on('change', function () {
-            var value = $(this).val();
-            $.ajax(
-                {
-                    url: 'yearGraduation.php',
-                    type: 'POST',
-                    data: 'Graduation_Year=' + value,
-                    beforeSend: function () {
-                        $("#table_alumni").html('Working on...');
-                    },
-                    success: function (data) {
-                        $("#table_alumni").html(data);
-                    }
 
-                }
-            )
-        })
 
     });
 
