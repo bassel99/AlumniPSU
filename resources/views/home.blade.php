@@ -43,13 +43,17 @@
             <div class="menu-list">
 
                 <ul id="menu-content" class="menu-content collapse out">
+                    <li class="collapsed">
+                            <i></i>&nbsp; Welcome {{Auth::user()->name}}
+                    </li>
+
                     <li class="collapsed active">
                         <a href="/">
                             <i class="fa fa-home fa-lg"></i> Home
                         </a>
                     </li>
 
-                    <li class="collapsed ">
+                    <li class="collapsed">
                         <a href="/logout">
                             <i class="fa fa-user fa-lg"></i> Log Out
                         </a>
