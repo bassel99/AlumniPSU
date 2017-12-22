@@ -196,13 +196,16 @@
 <script>
     $(document).ready(function () {
 
-        $("#changeNationality, #changeMajor").on('change', function () {
+        $("#changeNationality, #changeMajor, #Graduation_Year").on('change', function () {
             var nationality = $('#changeNationality');
             var major = $('#changeMajor');
+            var year = $('#Graduation_Year');
             console.log(nationality.val());
             console.log(major.val());
+            console.log(year.val());
             var keywordNationality = nationality.val();
             var keywordMajor = major.val();
+            var keywordYear = year.val();
 
             $.ajax({
                 url : '/changeNationalityFilter',
