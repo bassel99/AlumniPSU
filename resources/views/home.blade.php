@@ -44,7 +44,7 @@
 
                 <ul id="menu-content" class="menu-content collapse out">
                     <li class="collapsed">
-                            <i></i>&nbsp; Welcome {{Auth::user()->name}}
+                        <i></i>&nbsp; Welcome {{Auth::user()->name}}
                     </li>
 
                     <li class="collapsed active">
@@ -101,15 +101,11 @@
             <a href="/addAlumni">
                 <button type="button" class="btn btn-info ">+ New Alumnu</button>
             </a>
-            <a href="#">
-                <button type="button" class="btn btn-info ">Review Alumni</button>
-            </a>
-            {{--@if ($alumni->role == 'admin')
+            @if(Auth::user()->role == 'admin')
                 <a href="/pendingAlumnus">
-                    <button type="button" class="btn btn-info ">Review</button>
-
+                    <button type="button" class="btn btn-info">Review Alumni</button>
                 </a>
-            @endif--}}
+            @endif
         </div>
 
         <div class="col-sm-12 col-lg-3">
@@ -240,7 +236,7 @@
             var keywordYear = year.val();
 
             $.ajax({
-                url : '/changeNationalityFilter',
+                url: '/changeNationalityFilter',
                 type: 'GET',
                 data: {'searchNationality': keywordNationality, 'searchMajor': keywordMajor, 'searchYear': keywordYear},
                 success: function (data) {
@@ -250,7 +246,6 @@
             });
 
         });
-
 
 
     });
