@@ -13,49 +13,22 @@ use Illuminate\Http\Request;
 class filtersController extends Controller
 {
 
-    public function nationality(Request $request)
+    public function filter(Request $request)
     {
-        $all = 'All';
         if ($request->ajax()) {
 
             $keywordNationality = $request->searchNationality;
             $keywordMajor = $request->searchMajor;
             $keywordYear = $request->searchYear;
 
-            if ($keywordNationality == $all && $keywordMajor == $all && $keywordYear == $all) {
-                $alumnus = Alumnidata::latest()->get();
-                //success
-            } else if ($keywordNationality !== $all && $keywordMajor == $all && $keywordYear == $all) {
-                $alumnus = Alumnidata::latest()->where('nationality', $keywordNationality)->get();
-                //success
-            } else if ($keywordNationality !== $all && $keywordMajor !== $all && $keywordYear == $all) {
-                $alumnus = Alumnidata::latest()->where('nationality', $keywordNationality)->where('major', $keywordMajor)->get();
-                //success
-            } elseif ($keywordNationality !== $all && $keywordMajor == $all && $keywordYear !== $all) {
-                $alumnus = Alumnidata::latest()->where('nationality', $keywordNationality)->where('graduation_year', $keywordYear)->get();
-                //success
-            } else if ($keywordNationality == $all && $keywordMajor !== $all && $keywordYear == $all) {
-                $alumnus = Alumnidata::latest()->where('major', $keywordMajor)->get();
-                //success
-            } else if ($keywordNationality == $all && $keywordMajor !== $all && $keywordYear !== $all) {
-                $alumnus = Alumnidata::latest()->where('major', $keywordMajor)->where('graduation_year', $keywordYear)->get();
-                //success
-            } else if ($keywordNationality == $all && $keywordMajor == $all && $keywordYear !== $all) {
-                $alumnus = Alumnidata::latest()->where('graduation_year', $keywordYear)->get();
-                //success
-            } else {
-                $alumnus = Alumnidata::latest()->where('nationality', $keywordNationality)->where('major', $keywordMajor)->where('graduation_year', $keywordYear)->get();
-            }
+            $alumnus = Alumnidata::latest()->where('nationality', "LIKE", "%{$keywordNationality}%")
+            ->where('major',"LIKE", "%{$keywordMajor}%")
+            ->where('graduation_year', "LIKE", "%{$keywordYear}%")
+            ->get();
 
             return Response($this->designBluePrint($alumnus));
         }
         return null;
-    }
-
-
-    public function graduationYear()
-    {
-
     }
 
     public function designBluePrint($alumnus)

@@ -47,9 +47,8 @@ Route::get('/pendingAlumnus', 'ApproveAlumniController@viewAllPending');
 //approve alumni or reject logic, what is between brackets {wildcard} must be the name of the argument in approve method
 Route::post('/approveAlumni/{pendingalumnu}', 'ApproveAlumniController@approve');
 
-Route::get('/changeMajorFilter', 'filtersController@major');
-
-Route::get('/changeNationalityFilter', 'filtersController@nationality');
+//this is for searching for specific alumnus
+Route::get('/changeFilter', 'filtersController@filter');
 
 //view the selected alumni data
 Route::get('profile/{alumniKey}', 'ProfilesController@show');

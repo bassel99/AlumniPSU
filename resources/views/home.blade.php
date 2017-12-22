@@ -111,7 +111,7 @@
         <div class="col-sm-12 col-lg-3">
             <form>
                 <select class="form-control" id="changeMajor" name="changeMajor">
-                    <option value="All" readonly="true" selected>Major..</option>
+                    <option value="" readonly="true" selected>Major..</option>
                     <option value="Software Engineering">Software Engineering</option>
                     <option value="Communications Engineering">Communications Engineering</option>
                     <option value="Computer Science">Computer Science</option>
@@ -129,7 +129,7 @@
         <div class="col-sm-12 col-lg-3">
             <form>
                 <select class="form-control" id="changeNationality" name="changeNationality">
-                    <option value="All" readonly="true" selected>Nationality..</option>
+                    <option value="" readonly="true" selected>Nationality..</option>
                     <option value="Saudi">Saudi Arabia</option>
                     <option value="Syria">Syria</option>
                     <option value="Jordan">Jordan</option>
@@ -147,7 +147,7 @@
         <div class="col-sm-12 col-lg-3">
             <form>
                 <select class="form-control" id="Graduation_Year" name="Graduation_Year">
-                    <option value="All" selected>Graduation Year..</option>
+                    <option value="" selected>Graduation Year..</option>
                     <option value="2011">2011</option>
                     <option value="2012">2012</option>
                     <option value="2013">2013</option>
@@ -235,7 +235,7 @@
             var keywordYear = year.val();
 
             $.ajax({
-                url: '/changeNationalityFilter',
+                url: '/changeFilter',
                 type: 'GET',
                 data: {'searchNationality': keywordNationality, 'searchMajor': keywordMajor, 'searchYear': keywordYear},
                 success: function (data) {
