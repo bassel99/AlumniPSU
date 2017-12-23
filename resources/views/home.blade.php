@@ -91,16 +91,7 @@
             </div>
             <br>
         </div>
-        <div class="col-sm-12 col-lg-3">
-            <a href="/addAlumni">
-                <button type="button" class="btn btn-info ">+ New Alumnu</button>
-            </a>
-            @if(Auth::user()->role == 'admin')
-                <a href="/pendingAlumnus">
-                    <button type="button" class="btn btn-info">Review Alumni</button>
-                </a>
-            @endif
-        </div>
+
 
         <div class="col-sm-12 col-lg-3">
             <form>
@@ -170,8 +161,19 @@
             <br>
         </div>
 
+        <div class="col-sm-12 col-lg-3">
+            <a href="/addAlumni">
+                <button type="button" class="btn btn-info ">+ New Alumnu</button>
+            </a>
+            @if(Auth::user()->role == 'admin')
+                <a href="/pendingAlumnus">
+                    <button type="button" class="btn btn-info">Review Alumni</button>
+                </a>
+            @endif
+        </div>
 
-        <div class="col-sm-10 col-lg-12">
+
+        <div class="col-sm-12 col-lg-12">
             <div id="table_alumni" class="table-responsive">
                 <table class="table table-striped table-hover" style="background-color:white ">
                     <thead>
