@@ -136,8 +136,11 @@
                     <option value="Lebanese">Lebanese</option>
                     <option value="Yemen">Yemen</option>
                     <option value="Palestinian">Palestinian</option>
+                    <option value="Egyptian">Egyptian</option>
+                    <option value="Emirati">Emirati</option>
+                    <option value="Kuwaiti">Kuwaiti</option>
+                    <option value="Omani">Omani</option>
                 </select>
-
 
             </form>
             <br>
