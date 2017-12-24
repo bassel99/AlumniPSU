@@ -80,8 +80,7 @@ if (isset($_POST['submit'])) {
 
                     <br>
 
-                    <span class="pull-right"><a href="/register">Register</a></span><span><a
-                                href="#">Forgot Password</a></span>
+                    <span class="pull-right"><a href="/register">Register</a></span>
                 </div>
             </div>
 
