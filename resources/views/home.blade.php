@@ -77,102 +77,107 @@
             </div>
         </div>
     </div>
+
     <div class="col-sm-9 col-lg-10">
 
         <br>
-        <div class="col-sm-12 col-lg-3">
-            <div class="input-group">
-                <input id="search" value="" type="text" class="form-control" placeholder="Search">
-                <div class="input-group-btn">
-                    <button class="btn btn-default" type="submit">
-                        <i class="glyphicon glyphicon-search"></i>
-                    </button>
+        <div class="row" style="margin: 5px">
+            <div class="col-sm-12 col-lg-3">
+                <div class="input-group">
+                    <input id="search" value="" type="text" class="form-control" placeholder="Search">
+                    <div class="input-group-btn">
+                        <button class="btn btn-default" type="submit">
+                            <i class="glyphicon glyphicon-search"></i>
+                        </button>
+                    </div>
                 </div>
+                <br>
             </div>
-            <br>
+            <div class="col-sm-12 col-lg-3">
+                <form>
+                    <select class="form-control" id="changeMajor" name="changeMajor">
+                        <option value="" selected>Major..</option>
+                        <option value="Software Engineering">Software Engineering</option>
+                        <option value="Communications Engineering">Communications Engineering</option>
+                        <option value="Computer Science">Computer Science</option>
+                        <option value="Finance">Finance</option>
+                        <option value="Marketing">Marketing</option>
+                        <option value="Information Systems">Information Systems</option>
+                    </select>
+
+
+                </form>
+                <br>
+            </div>
+            <div class="col-sm-12 col-lg-3">
+                <form>
+                    <select class="form-control" id="changeNationality" name="changeNationality">
+                        <option value="" selected>Nationality..</option>
+                        <option value="Saudi">Saudi Arabia</option>
+                        <option value="Syria">Syria</option>
+                        <option value="Jordan">Jordan</option>
+                        <option value="Lebanese">Lebanese</option>
+                        <option value="Yemen">Yemen</option>
+                        <option value="Palestinian">Palestinian</option>
+                        <option value="Egyptian">Egyptian</option>
+                        <option value="Emirati">Emirati</option>
+                        <option value="Kuwaiti">Kuwaiti</option>
+                        <option value="Omani">Omani</option>
+                    </select>
+
+                </form>
+                <br>
+            </div>
+            <div class="col-sm-12 col-lg-3">
+                <form>
+                    <select class="form-control" id="Graduation_Year" name="Graduation_Year">
+                        <option value="" selected>Graduation Year..</option>
+                        <option value="2004">2004</option>
+                        <option value="2005">2005</option>
+                        <option value="2006">2006</option>
+                        <option value="2007">2007</option>
+                        <option value="2008">2008</option>
+                        <option value="2009">2009</option>
+                        <option value="2010">2010</option>
+                        <option value="2011">2011</option>
+                        <option value="2012">2012</option>
+                        <option value="2013">2013</option>
+                        <option value="2014">2014</option>
+                        <option value="2015">2015</option>
+                        <option value="2016">2016</option>
+                        <option value="2017">2017</option>
+                        <option value="2018">2018</option>
+                        <option value="2019">2019</option>
+                        <option value="2020">2020</option>
+                        <option value="2021">2021</option>
+                    </select>
+
+
+                </form>
+                <br>
+            </div>
         </div>
 
-
-        <div class="col-sm-12 col-lg-3">
-            <form>
-                <select class="form-control" id="changeMajor" name="changeMajor">
-                    <option value="" selected>Major..</option>
-                    <option value="Software Engineering">Software Engineering</option>
-                    <option value="Communications Engineering">Communications Engineering</option>
-                    <option value="Computer Science">Computer Science</option>
-                    <option value="Finance">Finance</option>
-                    <option value="Marketing">Marketing</option>
-                    <option value="Information Systems">Information Systems</option>
-                </select>
-
-
-            </form>
-            <br>
-        </div>
-
-
-        <div class="col-sm-12 col-lg-3">
-            <form>
-                <select class="form-control" id="changeNationality" name="changeNationality">
-                    <option value="" selected>Nationality..</option>
-                    <option value="Saudi">Saudi Arabia</option>
-                    <option value="Syria">Syria</option>
-                    <option value="Jordan">Jordan</option>
-                    <option value="Lebanese">Lebanese</option>
-                    <option value="Yemen">Yemen</option>
-                    <option value="Palestinian">Palestinian</option>
-                    <option value="Egyptian">Egyptian</option>
-                    <option value="Emirati">Emirati</option>
-                    <option value="Kuwaiti">Kuwaiti</option>
-                    <option value="Omani">Omani</option>
-                </select>
-
-            </form>
-            <br>
-        </div>
-
-
-        <div class="col-sm-12 col-lg-3">
-            <form>
-                <select class="form-control" id="Graduation_Year" name="Graduation_Year">
-                    <option value="" selected>Graduation Year..</option>
-                    <option value="2004">2004</option>
-                    <option value="2005">2005</option>
-                    <option value="2006">2006</option>
-                    <option value="2007">2007</option>
-                    <option value="2008">2008</option>
-                    <option value="2009">2009</option>
-                    <option value="2010">2010</option>
-                    <option value="2011">2011</option>
-                    <option value="2012">2012</option>
-                    <option value="2013">2013</option>
-                    <option value="2014">2014</option>
-                    <option value="2015">2015</option>
-                    <option value="2016">2016</option>
-                    <option value="2017">2017</option>
-                    <option value="2018">2018</option>
-                    <option value="2019">2019</option>
-                    <option value="2020">2020</option>
-                    <option value="2021">2021</option>
-                </select>
-
-
-            </form>
-            <br>
-        </div>
-
-        <div class="col-sm-12 col-lg-3">
-            <a href="/addAlumni">
-                <button type="button" class="btn btn-info ">+ New Alumnu</button>
-            </a>
+        <div class="row" style="margin: 5px">
             @if(Auth::user()->role == 'admin')
-                <a href="/pendingAlumnus">
-                    <button type="button" class="btn btn-info">Review Alumni</button>
-                </a>
+                <div class="col-sm-12 col-lg-6">
+                    <a href="/addAlumni">
+                        <button type="button" class="btn btn-info ">+ New Alumnu</button>
+                    </a></div>
+                <div class="col-sm-12 col-lg-6">
+                    <a href="/addAlumni">
+                        <button type="button" class="btn btn-info ">+ New Alumnu</button>
+                    </a></div>
+            @else
+                <div class="col-sm-12 col-lg-12">
+                    <a href="/addAlumni">
+                        <button type="button" class="btn btn-info ">+ New Alumnu</button>
+                    </a></div>
             @endif
+
         </div>
 
-
+        <div class="row" style="margin: 5px">
         <div class="col-sm-12 col-lg-12">
             <div id="table_alumni" class="table-responsive">
                 <table class="table table-striped table-hover" style="background-color:white ">
@@ -213,6 +218,9 @@
                 </table>
             </div>
         </div>
+        </div>
+
+
         <div class="col-sm-10 col-lg-12 text-center">
             <ul class="pagination pagination-lg pager" id="Pager"></ul>
         </div>
