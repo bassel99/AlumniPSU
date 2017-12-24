@@ -47,14 +47,14 @@
                         <i></i>&nbsp; Welcome {{Auth::user()->name}}
                     </li>
 
-                    <li class="collapsed active">
-                        <a href="/">
+                    <li class="collapsed active" href="/">
+                        <a>
                             <i class="fa fa-home fa-lg"></i> Home
                         </a>
                     </li>
 
-                    <li class="collapsed">
-                        <a href="/logout">
+                    <li class="collapsed" href="/logout">
+                        <a>
                             <i class="fa fa-user fa-lg"></i> Log Out
                         </a>
                     </li>
