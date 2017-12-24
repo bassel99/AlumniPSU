@@ -151,8 +151,6 @@
                         <option value="2020">2020</option>
                         <option value="2021">2021</option>
                     </select>
-
-
                 </form>
                 <br>
             </div>
@@ -162,20 +160,21 @@
             @if(Auth::user()->role == 'admin')
                 <div class="col-sm-12 col-lg-6">
                     <a href="/addAlumni">
-                        <button type="button" class="btn btn-info ">+ New Alumnu</button>
+                        <button type="button" class="btn btn-info btn-block">+ New Alumnu</button>
                     </a></div>
                 <div class="col-sm-12 col-lg-6">
-                    <a href="/addAlumni">
-                        <button type="button" class="btn btn-info ">+ New Alumnu</button>
+                    <a href="/pendingAlumnus">
+                        <button type="button" class="btn btn-info btn-block">Review Alumni</button>
                     </a></div>
             @else
                 <div class="col-sm-12 col-lg-12">
                     <a href="/addAlumni">
-                        <button type="button" class="btn btn-info ">+ New Alumnu</button>
+                        <button type="button" class="btn btn-info btn-block">+ New Alumnu</button>
                     </a></div>
             @endif
 
         </div>
+        <br>
 
         <div class="row" style="margin: 5px">
         <div class="col-sm-12 col-lg-12">
