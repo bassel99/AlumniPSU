@@ -47,17 +47,21 @@
                         <i></i>&nbsp; Welcome {{Auth::user()->name}}
                     </li>
 
-                    <li class="collapsed active" href="/">
-                        <a>
-                            <i class="fa fa-home fa-lg"></i> Home
-                        </a>
-                    </li>
+                    <a href="/">
+                        <li class="collapsed active">
 
-                    <li class="collapsed" href="/logout">
-                        <a>
+                            <i class="fa fa-home fa-lg"></i> Home
+
+                        </li>
+                    </a>
+
+                    <a href="/logout">
+                        <li class="collapsed">
+
                             <i class="fa fa-user fa-lg"></i> Log Out
-                        </a>
-                    </li>
+
+                        </li>
+                    </a>
 
                     <ul class="sub-menu collapse" id="products">
                         <li class="active">
