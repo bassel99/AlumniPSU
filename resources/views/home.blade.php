@@ -228,13 +228,16 @@
 
                         @endforeach
 
+
                         </tbody>
                     </table>
+                    <div class="temp col-lg-12 col-sm-4" style="display: none;" >
+
+                    </div>
                 </div>
             </div>
-        </div>
 
-        <div id="temp"></div>
+        </div>
 
         <div class="col-sm-10 col-lg-12 text-center">
             <ul class="pagination pagination-lg pager" id="Pager"></ul>
