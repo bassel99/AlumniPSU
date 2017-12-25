@@ -122,7 +122,7 @@
 
                 <div class="form-group">
                     <input type="submit" name="submit" class="btn btn-block btn-lg btn-col backcol" value="Sign Up"/><br>
-                    <span class="pull-right"><a href="Login.php">Log In</a></span>
+                    <span class="pull-right"><a href="/login">Log In</a></span>
                 </div>
             </div>
 
