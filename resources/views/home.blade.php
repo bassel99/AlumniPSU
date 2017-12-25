@@ -231,9 +231,10 @@
 
                         </tbody>
                     </table>
-                    <div class="temp col-lg-12 col-sm-4" style="display: none; width: 100%;" >
 
-                    </div>
+                </div>
+                <div class="temp col-lg-12 col-sm-4" style="display: none; width: 100%;" >
+
                 </div>
             </div>
 
