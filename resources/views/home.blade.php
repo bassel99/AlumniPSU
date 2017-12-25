@@ -193,7 +193,7 @@
 
         <div class="row" style="margin: 5px">
             <div class="col-sm-12 col-lg-12">
-                <div id="table_alumni" class="table-responsive">
+                <div id="table_alumni" class="table-responsive" style="overflow-y: auto; height: 70vh">
                     <table class="table table-striped table-hover" style="background-color:white ">
                         <thead>
                         <tr>
@@ -231,7 +231,7 @@
 
                         </tbody>
                     </table>
-                    <div class="temp col-lg-12 col-sm-4" style="display: none;" >
+                    <div class="temp col-lg-12 col-sm-4" style="display: none; width: 100%;" >
 
                     </div>
                 </div>
