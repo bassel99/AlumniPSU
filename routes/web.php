@@ -50,5 +50,5 @@ Route::post('/approveAlumni/{pendingalumnu}', 'ApproveAlumniController@approve')
 //this is for searching for specific alumnus
 Route::get('/changeFilter', 'filtersController@filter');
 
-//view the selected alumni data
-Route::get('profile/{alumniKey}', 'ProfilesController@show');
+Route::get('/viewInfo', 'HomeController@boxInfo');
+

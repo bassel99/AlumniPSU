@@ -172,4 +172,8 @@ body {
     background-color: #12416D;
     border-color: #12416D;
 }
-  
+
+a {
+    color:inherit;
+    text-decoration: none;
+}

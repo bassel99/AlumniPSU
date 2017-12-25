@@ -12,10 +12,11 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css"
-          integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
     <!-- -->
-    <link rel="stylesheet" href="/css/index.css">
+    <link rel="stylesheet" href="/css/home.css">
     <link rel="stylesheet" href="/css/css_login.css">
 
 
@@ -40,11 +41,34 @@
             <div class="menu-list">
 
                 <ul id="menu-content" class="menu-content collapse out">
+                    <li class="collapsed">
+                        <i></i>&nbsp; Welcome {{Auth::user()->name}}
+                    </li>
+
                     <li class="collapsed active">
-                        <a href="Index.php">
+                        <a href="/">
                             <i class="fa fa-home fa-lg"></i> Home
                         </a>
                     </li>
+
+                    <li class="collapsed">
+                        <a href="/logout">
+                            <i class="fa fa-user fa-lg"></i> Log Out
+                        </a>
+                    </li>
+
+                    <ul class="sub-menu collapse" id="products">
+                        <li class="active">
+                            <a href="#">test</a>
+                        </li>
+                        <li>
+                            <a href="#">General</a>
+                        </li>
+                        <li>
+                            <a href="#">Buttons</a>
+                        </li>
+
+                    </ul>
 
 
                 </ul>
