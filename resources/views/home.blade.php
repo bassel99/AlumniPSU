@@ -95,7 +95,7 @@
         <div class="row" style="margin: 5px">
             @if(Auth::user()->role == 'admin')
                 <div class="col-sm-12 col-lg-6">
-                    <a href="/addAlumni">
+                    <a href="/addAlumni" style="margin-bottom: 5px">
                         <button type="button" class="btn btn-info btn-block">+ New Alumnu</button>
                     </a></div>
                 <div class="col-sm-12 col-lg-6">
