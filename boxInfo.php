@@ -47,12 +47,6 @@
 <body>
 <div class="row" style=" box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
 
-    <?php
-    include 'include/include.php';
-    $sql = "SELECT * FROM database_alumni1 WHERE Id='120000548'";
-    $result = mysqli_query($conn, $sql);
-    $row = mysqli_fetch_assoc($result)
-    ?>
     <div class="modal-dialog1" style="">
         <div class="col-lg-4" style=" border-left:  dotted">
             <strong><p style="text-align: center;">Personal Information</p></strong>
@@ -64,10 +58,10 @@
                     <p>E-mail:</p>
                 </div>
                 <div class="col-lg-7">
-                    <p><?php echo $row['Name'] ?></p>
-                    <p><?php echo $row['Nationality'] ?></p>
-                    <p><?php echo $row['Contact_Numbers'] ?></p>
-                    <p><?php echo $row['E_Mail'] ?></p>
+                    <p>My Name</p>
+                    <p>My Nationality</p>
+                    <p>My number</p>
+                    <p>My Email</p>
 
                 </div>
 
@@ -83,10 +77,10 @@
                     <p>Graduation Year:</p>
                 </div>
                 <div class="col-lg-7">
-                    <p><?php echo $row['Id'] ?></p>
-                    <p><?php echo $row['major'] ?></p>
-                    <p><?php echo $row['GPA'] ?></p>
-                    <p><?php echo $row['Graduation_Year'] ?></p>
+                    <p>My ID</p>
+                    <p>My Major</p>
+                    <p>My GPA</p>
+                    <p>My graduation year</p>
 
                 </div>
             </div>
@@ -102,10 +96,10 @@
                     <p>Company Size:</p>
                 </div>
                 <div class="col-lg-7">
-                    <p><?php echo $row['Job_title'] ?></p>
-                    <p><?php echo $row['of_the_company_or_institution_that_hire_him_Place_the_employer'] ?></p>
-                    <p><?php echo $row['Name_company_or_institution_Cooperative_Education'] ?></p>
-                    <p><?php echo $row['employer'] ?></p>
+                    <p>My job title</p>
+                    <p>Company after</p>
+                    <p>My COOP</p>
+                    <p>My Employer</p>
 
                 </div>
             </div>

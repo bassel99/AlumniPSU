@@ -21,6 +21,7 @@
     <link rel="stylesheet" href="/css/css_login.css">
     <link rel="stylesheet" href="/css/navfixed.css">
     <link rel="stylesheet" href="/css/home.css">
+    <link rel="stylesheet" href="/css/boxInfo.css">
 
 
 </head>
@@ -51,7 +52,7 @@
                     <li class="collapsed active">
                         <a href="/" style="display: block;">
 
-                                <i class="fa fa-home fa-lg"></i> Home
+                            <i class="fa fa-home fa-lg"></i> Home
                         </a>
                     </li>
 
@@ -214,7 +215,7 @@
                         @foreach($alumnus as $alumni)
 
                             <tr>
-                                <td>{{ $alumni->id }}</td>
+                                <td class="studentID">{{ $alumni->id }}</td>
                                 <td>{{ $alumni->englishName }}</td>
                                 <td>{{ $alumni->major }}</td>
                                 <td>{{ $alumni->GPA }}</td>
@@ -233,11 +234,11 @@
             </div>
         </div>
 
+        <div id="temp"></div>
 
         <div class="col-sm-10 col-lg-12 text-center">
             <ul class="pagination pagination-lg pager" id="Pager"></ul>
         </div>
-
     </div>
 </div>
 
@@ -356,54 +357,12 @@
     });
 </script>
 
-<script>
-    $(document).ready(function () {
 
-        $("#search, #changeNationality, #changeMajor, #Graduation_Year").bind('change keyup', function () {
-            var searchAlumni = $('#search');
-            var nationality = $('#changeNationality');
-            var major = $('#changeMajor');
-            var year = $('#Graduation_Year');
-            console.log(searchAlumni.val());
-            console.log(nationality.val());
-            console.log(major.val());
-            console.log(year.val());
-            var keywordSearch = searchAlumni.val();
-            var keywordNationality = nationality.val();
-            var keywordMajor = major.val();
-            var keywordYear = year.val();
-
-            $.ajax({
-                url: '/changeFilter',
-                type: 'GET',
-                data: {
-                    'searchAlumni': keywordSearch,
-                    'searchNationality': keywordNationality,
-                    'searchMajor': keywordMajor,
-                    'searchYear': keywordYear
-                },
-                success: function (data) {
-                    var tableBody = $('#tableBody');
-                    var tableWrapper = $('#table_alumni');
-                    tableWrapper.hide();
-                    tableBody.html(data);
-                    tableWrapper.slideDown(200);
-                }
-            });
-
-        });
-
-
-    });
-
-
-
-</script>
+<script src="/js/filters.js"></script>
+<script src="/js/alumniInfoBox.js"></script>
 
 <script type="text/javascript">
-
     $.ajaxSetup({headers: {'csrftoken': '{{ csrf_token() }}'}});
-
 </script>
 
 
