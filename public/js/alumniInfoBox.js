@@ -19,7 +19,7 @@ $(document).ready(function () {
                 'studentID': studentID,
             },
             success: function (data) {
-                var tableBody = $('.temp');
+                var tableBody = $('.box_info');
                 tableBody.hide();
                 tableBody.html(data);
                 tableBody.show(400);
