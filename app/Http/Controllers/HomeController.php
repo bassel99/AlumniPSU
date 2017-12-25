@@ -86,16 +86,16 @@ class HomeController extends Controller
 
             <div class='row'>
                 <div class='col-lg-5'>
-                    <p>Job Title:</p>
                     <p>Current Company: </p>
                     <p>Co-op Company: </p>
                     <p>Company Size:</p>
+                    <p class='emp'>Job title:</p>
                 </div>
                 <div class='col-lg-7'>
-                    <p>{$alumni->title}</p>
                     <p>{$alumni->afterGraduation}</p>
                     <p>{$alumni->companyCoop}</p>
                     <p>{$alumni->employer}</p>
+                    <p class='emp'>employer</p>
 
                 </div>
             </div>
