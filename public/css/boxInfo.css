@@ -1,21 +1,4 @@
-@media (min-width: 768px) {
-    .modal-dialog1 {
-        width: 1500px;
-        margin: auto;
-
-    }
-
-    .dottedP {
-        border-left: dotted;
-
-    }
-
-    .modal-content1 {
-        -webkit-box-shadow: 0 5px 15px rgba(0, 0, 0, .5);
-        box-shadow: 0 5px 15px rgba(0, 0, 0, .5);
-    }
-
-    .modal-sm1 {
-        width: 300px;
-    }
+.temp {
+    color: white;
+    background: #5bc0de;
 }
